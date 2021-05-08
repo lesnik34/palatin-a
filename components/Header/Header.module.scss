@@ -1,0 +1,79 @@
+@import '../../styles/variables.scss';
+
+.main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.wrapper {
+    padding-top: 12px;
+    padding-bottom: 19px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.full-logo {
+    display: flex;
+    align-items: center;
+}
+
+.link {
+    outline: none;
+
+    &:hover,
+    &:focus {
+        opacity: .7;
+    }
+}
+
+.logo {
+    width: 27px;
+    height: 20px;
+    margin-right: 20px;
+    margin-bottom: 2px;
+}
+
+.title {
+    width: 137px;
+    height: 30px;
+}
+
+.burger {
+    position: relative;
+    padding: 9px 16px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 5px;
+        top: 9px;
+        background-color: $mine-shaft;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        right: 5px;
+        top: 9px;
+        background-color: $mine-shaft;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+    }
+}
+
+.burger-dot {
+    background-color: $mine-shaft;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}

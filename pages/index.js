@@ -1,8 +1,10 @@
+import Layout from '../components/Layout'
+
 const Home = () => {
   return (
-    <div>
-      home
-    </div>
+    <Layout title='Palatin-a: Главная'>
+      <div></div>
+    </Layout>
   )
 }
 
