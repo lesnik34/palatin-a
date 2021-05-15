@@ -1,0 +1,51 @@
+@import '../../styles/variables.scss';
+
+.jumbotron {
+    padding-top: 10px;
+    margin-bottom: calc(150 * var(--sf));
+    position: relative;
+}
+
+.image {
+    width: calc(282 * var(--sf));
+    height: auto;
+}
+
+.main {
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    bottom: calc(-57 * var(--sf));
+}
+
+.background {
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+}
+
+.wrapper {
+    background-color: $background;
+    margin-left: auto;
+    padding-top: calc(22 * var(--sf));
+    padding-left: calc(18 * var(--sf));
+    padding-right: calc(30 * var(--sf));
+    padding-bottom: calc(45 * var(--sf));
+    width: calc(250 * var(--sf));
+}
+
+.title {
+    margin: 0;
+    color: $basic-black;
+    font-size: 20px;
+    font-size: 500;
+    font-family: $custom-font;
+    margin-bottom: 8px;
+}
+
+.description {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 300;
+    font-family: $default-font;
+}
