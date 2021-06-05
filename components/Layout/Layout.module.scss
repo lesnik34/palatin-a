@@ -1,0 +1,31 @@
+@import '../../styles/variables.scss';
+
+.wrapper {
+    position: relative;
+    z-index: 1;
+    background-color: $background;
+    margin-bottom: 310px;
+    border-radius: 0 0 26px 26px;
+}
+
+.overlay {
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    bottom: -310px;
+    background-color: $basic-black;
+}
+
+.footer {
+    display: flex;
+    align-items: flex-end;
+    position: fixed;
+    z-index: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    //background-color: $special-code-gray;
+}

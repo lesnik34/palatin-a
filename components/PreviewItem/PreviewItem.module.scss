@@ -1,0 +1,218 @@
+@import '../../styles/variables.scss';
+
+.item {
+    position: relative;
+    margin-bottom: calc(80 * var(--sf));
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &.in-view .item-wrap {
+        animation: fade-in 500ms ease-in-out;
+    }
+
+    &.not-in-view .item-wrap {
+        animation: fade-out 300ms ease-in-out;
+        opacity: 0;
+    }
+}
+
+.item-wrap {
+    position: relative;
+}
+
+.item-image-wrap {
+    position: relative;
+
+    &.first-type {
+        margin-left: calc(50% - 50vw);
+        width: calc(226 * var(--sf));
+        height: calc(313 * var(--sf));
+    }
+
+    &.second-type {
+        margin-left: auto;
+        margin-right: calc(50% - 50vw);
+        width: calc(180 * var(--sf));
+        height: calc(304 * var(--sf));
+    }
+
+    &.third-type {
+        width: calc(256 * var(--sf));
+        height: calc(276 * var(--sf));
+    }
+}
+
+.item-image {
+    background-color: $mine-shaft;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 100%;
+    height: 100%;
+}
+
+.item-title {
+    position: absolute;
+    background-color: $background;
+    padding: 10px 23px;
+    max-width: 214px;
+    font-family: $special-font;
+    font-size: 28px;
+    color: rgba($basic-black, .8);
+    text-transform: uppercase;
+    transition: left 500ms;
+    z-index: 10;
+
+    &.first-type {
+        left: calc(130 * var(--sf));
+        top: calc(95 * var(--sf));
+
+        &.description-visible {
+            left: -100vw;
+        }
+    }
+
+    &.second-type {
+        right: calc(100 * var(--sf));
+        top: calc(70 * var(--sf));
+        max-width: 200px;
+        transition: right 500ms;
+
+        &.description-visible {
+            right: -100vw;
+        }
+    }
+
+    &.third-type {
+        left: calc(150 * var(--sf));
+        top: calc(80 * var(--sf));
+
+        &.description-visible {
+            left: -100vw;
+        }
+    }
+}
+
+.item-button {
+    position: absolute;
+    background-color: $basic-black;
+    color: $basic-white;
+    text-transform: uppercase;
+    font-family: $special-font;
+    font-size: 18px;
+    padding: 10px 45px;
+    border: none;
+    bottom: -20px;
+    transition: left 300ms;
+    z-index: 15;
+    left: calc(50% - 91px);
+
+    &.description-visible {
+        left: -100vw;
+    }
+}
+
+.item-text {
+    font-family: $default-font;
+    font-size: 15px;
+    text-align: justify;
+    color: $dove-gray;
+    margin: 0;
+    position: absolute;
+    width: 291px;
+    left: -200vw;
+    top: 100px;
+    z-index: 10;
+    color: $basic-black;
+    transition: left 500ms;
+
+    &.description-visible {
+        left: calc(50% - 145px);
+    }
+}
+
+.item-overlay {
+    position: absolute;
+    opacity: 0;
+    left: 0;
+    top: 0;
+    backdrop-filter: blur(10px);
+    background-color: rgba($basic-white, .8);
+    border: 1px solid rgba($basic-white, .15);
+    transition: opacity 500ms;
+    width: 100%;
+    height: 100%;
+
+    &.description-visible {
+        opacity: 1;
+    }
+}
+
+.item-close {
+    border: none;
+    background-color: transparent;
+    width: 14px;
+    height: 12px;
+    position: absolute;
+    right: -100vw;
+    top: 20px;
+    transition: right 500ms;
+    padding: 10px 12px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 3px;
+        top: 9px;
+        width: 18px;
+        height: 4px;
+        background-color: $code-gray;
+        transform: rotate(45deg);
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 3px;
+        top: 9px;
+        width: 18px;
+        height: 4px;
+        background-color: $code-gray;
+        transform: rotate(-45deg);
+    }
+
+    &.description-visible {
+        right: 10px;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        top: -40px;
+    }
+
+    70% {
+        top: 20px;
+        opacity: 1;
+    }
+
+    100% {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+        top: 0;
+    }
+
+    100% {
+        opacity: 0;
+        top: -40px;
+    }
+}

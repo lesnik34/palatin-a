@@ -1,0 +1,155 @@
+@import '../../styles/variables.scss';
+
+.burger {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: transparent;
+    z-index: 150;
+    overflow: hidden;
+
+    &.anim-enter-done {
+        background-color: $special-code-gray;
+    }
+
+    &.anim-enter {
+        animation: background 600ms linear forwards;
+
+        & .link {
+            animation: fade-in 500ms ease-in-out forwards 300ms;
+            opacity: 0;
+        }
+
+        & .email {
+            animation: fade-in 400ms ease-in-out forwards 400ms;
+            opacity: 0;
+        }
+
+        & .logoWrap {
+            animation: fade-in 300ms ease-in-out forwards 500ms;
+            opacity: 0;
+        }
+    }
+
+    &.anim-exit {
+        animation: background 600ms linear alternate-reverse;
+        opacity: 0;
+
+        & .link {
+            animation: fade-out 150ms ease-in-out forwards;
+            opacity: 0;
+        }
+
+        & .email {
+            animation: fade-out 150ms ease-in-out forwards;
+            opacity: 0;
+        }
+
+        & .logoWrap {
+            animation: fade-out 150ms ease-in-out forwards;
+            opacity: 0;
+        }
+    }
+}
+
+.wrapper {
+    padding-top: 100px;
+}
+
+.list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.item {
+    overflow: hidden;
+    margin-bottom: 50px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.link {
+    position: relative;
+    color: $basic-white;
+    font-family: $custom-font;
+    font-weight: 600;
+    font-size: 30px;
+}
+
+.container {
+    position: absolute;
+    bottom: 20px;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    left: 20px;
+    right: 20px;
+}
+
+.email {
+    position: relative;
+    color: rgba($alto, .7);
+    font-size: 16px;
+}
+
+.logoWrap {
+    position: relative;
+    padding: 0 6px;
+    border: 2px solid rgba($basic-white, .8);
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: .4;
+}
+
+@keyframes background {
+    0% {
+        opacity: 0;
+        background-color: transparent;
+    }
+
+    70% {
+        opacity: 1;
+        background-color: $special-code-gray;
+    }
+
+    100% {
+        opacity: 1;
+        background-color: $special-code-gray;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        top: -100px;
+        opacity: 1;
+    }
+
+    100% {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        top: 0;
+        opacity: 1;
+    }
+
+    100% {
+        top: 100px;
+        opacity: 1;
+    }
+}

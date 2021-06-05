@@ -1,0 +1,59 @@
+@import '../../styles/variables.scss';
+
+.main {
+    overflow: hidden;
+    margin-bottom: 150px;
+}
+
+.title {
+    font-family: $custom-font;
+    color: rgba($basic-black, .37);
+    font-size: 24px;
+    max-width: 250px;
+    margin: 0;
+}
+
+.title-wrapper {
+    border-bottom: 2px solid $basic-black;
+    padding-bottom: 14px;
+    margin-bottom: 74px;
+}
+
+.list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.other {
+    margin-top: calc(80 * var(--sf));
+}
+
+.other-title {
+    margin: 0;
+    font-family: $special-font;
+    font-size: 28px;
+    color: rgba($basic-black, .8);
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.other-description {
+    font-family: $default-font;
+    font-size: 15px;
+    text-align: justify;
+    color: $dove-gray;
+    margin: 0;
+    margin-bottom: 35px;
+}
+
+.button {
+    background-color: $basic-black;
+    color: $basic-white;
+    text-transform: uppercase;
+    font-family: $special-font;
+    font-size: 18px;
+    padding: 10px 45px;
+    border: none;
+    margin-left: calc(50% - 87px);
+}

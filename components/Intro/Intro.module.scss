@@ -1,0 +1,32 @@
+@import '../../styles/variables.scss';
+
+.main {
+    margin-top: 122px;
+    margin-bottom: 100px;
+    overflow: hidden;
+    padding-bottom: 25px;
+}
+
+.title {
+    font-family: $custom-font;
+    font-weight: 600;
+    font-size: 20px;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.description {
+    font-family: $default-font;
+    font-weight: 300;
+    font-size: 14px;
+    text-align: justify;
+    margin: 0;
+    margin-bottom: 75px;
+}
+
+.list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: myCounter;
+}

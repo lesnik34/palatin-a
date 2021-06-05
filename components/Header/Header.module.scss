@@ -1,0 +1,215 @@
+@import '../../styles/variables.scss';
+
+.wrapper {
+    padding-top: 12px;
+    padding-bottom: 19px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.full-logo {
+    display: flex;
+    align-items: center;
+}
+
+.link {
+    outline: none;
+
+    &:hover,
+    &:focus {
+        opacity: .7;
+    }
+}
+
+.logo {
+    width: 27px;
+    height: 20px;
+    margin-right: 20px;
+    margin-bottom: 2px;
+    position: relative;
+    z-index: 10;
+}
+
+.title {
+    width: 137px;
+    height: 30px;
+    position: relative;
+    z-index: 10;
+}
+
+.anim-enter {
+    &::before {
+        animation: fade-in-left ease-in-out 340ms forwards;
+    }
+
+    & .burger-dot {
+        animation: fade-in-center ease-in-out 340ms forwards 30ms;
+    }
+
+    &::after {
+        animation: fade-in-right ease-in-out 340ms forwards 60ms;
+    }
+}
+
+.anim-exit {
+    &::before {
+        animation: fade-in-left ease-in-out 340ms alternate-reverse;
+    }
+
+    & .burger-dot {
+        animation: fade-in-center ease-in-out 340ms alternate-reverse 30ms;
+    }
+
+    &::after {
+        animation: fade-in-right ease-in-out 340ms alternate-reverse 60ms;
+    }
+}
+
+.burger {
+    position: fixed;
+    right: 20px;
+    top: 15px;
+    padding: 9px 16px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    z-index: 200;
+    overflow: hidden;
+
+    &.anim-enter-done {
+        & .burger-dot,
+        &::before,
+        &::after {
+            background-color: $basic-white;
+        }
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 5px;
+        top: 9px;
+        background-color: $mine-shaft;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        right: 5px;
+        top: 9px;
+        background-color: $mine-shaft;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+    }
+}
+
+.burger-dot {
+    background-color: $mine-shaft;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    position: relative;
+}
+
+@keyframes fade-in-left {
+    0% {
+        top: 9px;
+        background-color: $basic-black;
+    }
+
+    45% {
+        left: 5px;
+        top: -20px;
+    }
+
+    46% {
+        left: -20px;
+        background-color: $basic-black;
+    }
+
+    47% {
+        left: -20px;
+        top: 30px;
+    }
+
+    48% {
+        left: 5px;
+        background-color: $basic-white;
+    }
+
+    100% {
+        top: 9px;
+        background-color: $basic-white;
+    }
+}
+
+@keyframes fade-in-center {
+    0% {
+        top: 0px;
+        background-color: $basic-black;
+    }
+
+    45% {
+        left: 0px;
+        top: -20px;
+        background-color: $basic-black;
+    }
+
+    46% {
+        left: -50px;
+    }
+
+    47% {
+        left: -50px;
+        top: 21px;
+    }
+
+    48% {
+        left: 0px;
+        background-color: $basic-white;
+    }
+
+    100% {
+        top: 0px;
+        background-color: $basic-white;
+    }
+}
+
+@keyframes fade-in-right {
+    0% {
+        top: 9px;
+        background-color: $basic-black;
+    }
+
+    45% {
+        right: 5px;
+        top: -20px;
+    }
+
+    46% {
+        right: -20px;
+        background-color: $basic-black;
+    }
+
+    47% {
+        right: -20px;
+        top: 30px;
+    }
+
+    48% {
+        right: 5px;
+        background-color: $basic-white;
+    }
+
+    100% {
+        top: 9px;
+        background-color: $basic-white;
+    }
+}
+

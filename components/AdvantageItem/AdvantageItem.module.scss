@@ -1,0 +1,50 @@
+@import '../../styles/variables.scss';
+
+.item {
+    margin-bottom: 100px;
+    position: relative;
+    padding-left: 20px;
+    border-left: 2px solid $basic-black;
+
+    &.hidden .wrapper {
+        left: 100vw;
+    }
+
+    &.active .wrapper {
+        left: 0;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &:before {
+        counter-increment: myCounter;
+        content: counter(myCounter);
+        position: absolute;
+        right: -41px;
+        top: -59px;
+        font-family: $special-font;
+        font-size: 134px;
+        color: rgba($emperor, .38);
+    }
+}
+
+.title {
+    font-family: $special-font;
+    font-size: 19px;
+    margin: 0;
+    margin-bottom: 6px;
+}
+
+.description {
+    font-family: $default-font;
+    font-size: 20px;
+    font-weight: 300;
+    margin: 0;
+}
+
+.wrapper {
+    position: relative;
+    transition: left 800ms;
+}
