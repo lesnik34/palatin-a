@@ -2,6 +2,9 @@
   "name": "palatin-a",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "16.1.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
