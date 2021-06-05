@@ -41,36 +41,44 @@
 
 .anim-enter {
     &::before {
-        animation: anim-left ease-out 400ms forwards;
+        animation: fade-in-left ease-in-out 340ms forwards;
+    }
+
+    & .burger-dot {
+        animation: fade-in-center ease-in-out 340ms forwards 30ms;
     }
 
     &::after {
-        animation: anim-right ease-out 400ms forwards;
+        animation: fade-in-right ease-in-out 340ms forwards 60ms;
     }
 }
 
 .anim-exit {
     &::before {
-        animation: anim-left ease-out 400ms alternate-reverse;
+        animation: fade-in-left ease-in-out 340ms alternate-reverse;
+    }
+
+    & .burger-dot {
+        animation: fade-in-center ease-in-out 340ms alternate-reverse 30ms;
     }
 
     &::after {
-        animation: anim-right ease-out 400ms alternate-reverse;
+        animation: fade-in-right ease-in-out 340ms alternate-reverse 60ms;
     }
 }
 
 .burger {
-    position: relative;
+    position: fixed;
+    right: 20px;
+    top: 15px;
     padding: 9px 16px;
     outline: none;
     border: none;
     background-color: transparent;
     z-index: 200;
+    overflow: hidden;
 
-    &.active {
-        position: fixed;
-        right: 0;
-
+    &.anim-enter-done {
         & .burger-dot,
         &::before,
         &::after {
@@ -87,7 +95,6 @@
         width: 6px;
         height: 6px;
         border-radius: 50%;
-        transition: background-color 500ms;
     }
 
     &::after {
@@ -99,7 +106,6 @@
         width: 6px;
         height: 6px;
         border-radius: 50%;
-        transition: background-color 500ms;
     }
 }
 
@@ -108,63 +114,102 @@
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    transition: background-color 500ms;
+    position: relative;
 }
 
-@keyframes anim-right {
+@keyframes fade-in-left {
     0% {
-        right: 5px;
-        width: 6px;
+        top: 9px;
+        background-color: $basic-black;
     }
 
-    20% {
-        width: 9px;
+    45% {
+        left: 5px;
+        top: -20px;
     }
 
-    38% {
-        right: 16px;
-        width: 6px;
-    }
-    62% {
-        right: 16px;
-        width: 6px;
+    46% {
+        left: -20px;
+        background-color: $basic-black;
     }
 
-    80% {
-        width: 9px;
+    47% {
+        left: -20px;
+        top: 30px;
+    }
+
+    48% {
+        left: 5px;
+        background-color: $basic-white;
     }
 
     100% {
-        right: 5px;
-        width: 6px;
+        top: 9px;
+        background-color: $basic-white;
     }
 }
 
-@keyframes anim-left {
+@keyframes fade-in-center {
     0% {
-        left: 4px;
-        width: 6px;
+        top: 0px;
+        background-color: $basic-black;
     }
 
-    20% {
-        width: 9px;
+    45% {
+        left: 0px;
+        top: -20px;
+        background-color: $basic-black;
     }
 
-    38% {
-        left: 16px;
-        width: 6px;
-    }
-    62% {
-        left: 16px;
-        width: 6px;
+    46% {
+        left: -50px;
     }
 
-    80% {
-        width: 9px;
+    47% {
+        left: -50px;
+        top: 21px;
+    }
+
+    48% {
+        left: 0px;
+        background-color: $basic-white;
     }
 
     100% {
-        left: 4px;
-        width: 6px;
+        top: 0px;
+        background-color: $basic-white;
     }
 }
+
+@keyframes fade-in-right {
+    0% {
+        top: 9px;
+        background-color: $basic-black;
+    }
+
+    45% {
+        right: 5px;
+        top: -20px;
+    }
+
+    46% {
+        right: -20px;
+        background-color: $basic-black;
+    }
+
+    47% {
+        right: -20px;
+        top: 30px;
+    }
+
+    48% {
+        right: 5px;
+        background-color: $basic-white;
+    }
+
+    100% {
+        top: 9px;
+        background-color: $basic-white;
+    }
+}
+

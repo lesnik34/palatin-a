@@ -1,6 +1,6 @@
 import {
     fetchAdvantages, fetchGlobal, fetchJumbotron,
-    fetchLocations, fetchPartners, fetchPreview
+    fetchLocations, fetchPartners, fetchPreview, fetchRoutes
 } from '../utils/initialRequests';
 import Jumbotron from '../components/Jumbotron';
 import Intro from '../components/Intro';
@@ -40,7 +40,8 @@ Home.getInitialProps = async ({ store }) => {
         fetchPreview(store),
         fetchPartners(store),
         fetchLocations(store),
-        fetchGlobal(store)
+        fetchGlobal(store),
+        fetchRoutes(store)
     ]);
 };
 

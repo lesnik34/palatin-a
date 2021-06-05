@@ -6,7 +6,9 @@ const initialState = {
     previews: [],
     partners: [],
     locations: [],
-    global: {}
+    global: {},
+    routes: [],
+    services: []
 };
 
 const contentsSlice = createSlice({
@@ -30,6 +32,12 @@ const contentsSlice = createSlice({
         },
         setGlobal: (state, action) => {
             state.global = action.payload;
+        },
+        setServices: (state, action) => {
+            state.services = action.payload;
+        },
+        setRoutes: (state, action) => {
+            state.routes = action.payload;
         }
     }
 });
@@ -39,7 +47,9 @@ export const {
     setPreview,
     setPartners,
     setLocations,
-    setGlobal
+    setGlobal,
+    setServices,
+    setRoutes
 } = contentsSlice.actions;
 
 export default contentsSlice;

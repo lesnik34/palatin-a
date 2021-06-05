@@ -1,9 +1,9 @@
 import {
-    getJumbotron, getPreview, getAdvantages, getPartners, getPositions, getGlobal
+    getJumbotron, getPreview, getAdvantages, getPartners, getPositions, getGlobal, getRoutes, getServices
 } from '../api/graphcms';
 
 import {
-    setJumbotron, setPreview, setAdvantages, setPartners, setLocations, setGlobal
+    setJumbotron, setPreview, setAdvantages, setPartners, setLocations, setGlobal, setRoutes, setServices
 } from '../store/slices/content';
 
 export const fetchJumbotron = async (store) => {
@@ -58,4 +58,22 @@ export const fetchGlobal = async (store) => {
         const fetchedGlobal = await getGlobal();
         store.dispatch(setGlobal(fetchedGlobal));
     }
-}
+};
+
+export const fetchRoutes = async (store) => {
+    const {routes} = store.getState().content;
+
+    if (routes.length === 0) {
+        const fetchedRoutes = await getRoutes();
+        store.dispatch(setRoutes(fetchedRoutes));
+    }
+};
+
+export const fetchServices = async (store) => {
+    const {services} = store.getState().content;
+
+    if (services.length === 0) {
+        const fetchedServices = await getServices();
+        store.dispatch(setServices(fetchedServices));
+    }
+};

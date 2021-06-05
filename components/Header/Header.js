@@ -40,7 +40,9 @@ const Header = (props) => {
                         in={burgerVision}
                         classNames={{
                             enterActive: styles['anim-enter'],
+                            enterDone: styles['anim-enter-done'],
                             exitActive: styles['anim-exit'],
+                            exitDone: styles['anim-exit-done']
                         }}
                         timeout={400}
                     >

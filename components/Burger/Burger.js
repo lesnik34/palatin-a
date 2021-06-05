@@ -4,7 +4,9 @@ import styles from './Burger.module.scss';
 
 const Burger = (props) => {
     const {
-        vision
+        vision,
+        getRoutes,
+        global
     } = props;
 
     return (
@@ -19,14 +21,32 @@ const Burger = (props) => {
                 exitDone: styles['anime-exit-done']
             }}
             timeout={{
-                enter: 500,
-                exit: 300
+                enter: 800,
+                exit: 800
             }}
         >
             <div className={styles.burger}>
                 <div className="container">
                     <div className={styles.wrapper}>
+                        <ul className={styles.list}>
+                            { getRoutes() }
+                        </ul>
 
+                        <div className={styles.container}>
+                            <a
+                                href={`mailto:${global.email}`}
+                                className={styles.email}
+                            >
+                                {global.email}
+                            </a>
+
+                            <div className={styles.logoWrap}>
+                                <div
+                                    className={styles.logo}
+                                    style={{ backgroundImage: `url(${global.logo.url})` }}
+                                />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

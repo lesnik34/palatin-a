@@ -75,8 +75,8 @@
 }
 
 .link {
-    background-color: $alabaster;
-    border-radius: 10px;
+    background-color: rgba($alabaster, .95);
+    border-radius: 5px;
     padding: 12px 25px;
     width: 100%;
     display: block;

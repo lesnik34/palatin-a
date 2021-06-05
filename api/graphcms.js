@@ -148,4 +148,55 @@ export const getGlobal = async () => {
     );
 
     return globals[globals.length - 1];
-}
+};
+
+export const getRoutes = async () => {
+    const { services } = await graphcms.request(
+        `{
+            services (stage: PUBLISHED) {
+                id,
+                title,
+                slug
+            }
+        }`
+    );
+
+    return services;
+};
+
+export const getServices = async () => {
+    const { services } = await graphcms.request(
+        `{
+            services (stage: PUBLISHED) {
+                id,
+                title,
+                slug,
+                description { html },
+                images {
+                    id,
+                    imageName,
+                    mobileImage {
+                        url
+                    },
+                    mobileImageRetina {
+                        url
+                    },
+                    tabletImage {
+                        url
+                    },
+                    tabletImageRetina {
+                        url
+                    },
+                    desktopImage {
+                        url
+                    },
+                    desktopImageRetina {
+                        url
+                    }
+                }
+            }
+        }`
+    );
+
+    return services;
+};
