@@ -1,3 +1,3 @@
-import Resize from './Resize'
+import Resize from './Resize';
 
 export default Resize;

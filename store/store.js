@@ -1,14 +1,12 @@
-import rootReducer from './slices/rootReducer'
-import { configureStore } from '@reduxjs/toolkit'
-import thunk from 'redux-thunk'
-import { createWrapper } from 'next-redux-wrapper'
+import { configureStore } from '@reduxjs/toolkit';
+import thunk from 'redux-thunk';
+import { createWrapper } from 'next-redux-wrapper';
+import rootReducer from './slices/rootReducer';
 
-const initStore = () => {
-    return configureStore({
-        reducer: rootReducer,
-        middleware: [ thunk ]
-    })
-}
+const initStore = () => configureStore({
+    reducer: rootReducer,
+    middleware: [ thunk ]
+});
 
 const wrapper = createWrapper(initStore);
 

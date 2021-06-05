@@ -1,12 +1,13 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
     jumbotron: {},
     advantages: [],
     previews: [],
     partners: [],
-    locations: []
-}
+    locations: [],
+    global: {}
+};
 
 const contentsSlice = createSlice({
     name: 'content',
@@ -26,15 +27,19 @@ const contentsSlice = createSlice({
         },
         setLocations: (state, action) => {
             state.locations = action.payload;
+        },
+        setGlobal: (state, action) => {
+            state.global = action.payload;
         }
     }
-})
+});
 export const {
     setJumbotron,
     setAdvantages,
     setPreview,
     setPartners,
-    setLocations
+    setLocations,
+    setGlobal
 } = contentsSlice.actions;
 
 export default contentsSlice;

@@ -1,3 +1,3 @@
-import JumbotronContainer from '../../containers/JumbotronContainer'
+import JumbotronContainer from '../../containers/JumbotronContainer';
 
 export default JumbotronContainer;

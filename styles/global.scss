@@ -5,8 +5,9 @@ html,
 body {
     padding: 0;
     margin: 0;
-    background-color: $background;
+    background: linear-gradient($background 0%, $background 50%, $special-code-gray 51%, $special-code-gray 100%);
     font-family: $default-font;
+    position: relative;
 }
 
 a {

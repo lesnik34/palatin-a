@@ -1,3 +1,3 @@
-import AdvantageItem from './AdvantageItem'
+import AdvantageItem from './AdvantageItem';
 
 export default AdvantageItem;

@@ -1,6 +1,7 @@
-import { useSelector } from 'react-redux'
+import { useSelector } from 'react-redux';
+import { v4 as key } from 'uuid';
 
-import Partners from '../components/Partners/Partners'
+import Partners from '../components/Partners/Partners';
 
 const PartnersContainer = () => {
     const { partners } = useSelector(state => state.content);
@@ -10,10 +11,8 @@ const PartnersContainer = () => {
         const length = Math.floor(partners.length / count);
 
         for (let i = 0; i <= length; i++) {
-            const key = ~(Math.random() * 10000);
-
             itemList.push((
-                <ul key={key} className={styles['list']}>
+                <ul key={key()} className={styles.list}>
                     {
                         partners.slice(i * count, i * count + count).map(partner => {
                             const {
@@ -22,27 +21,27 @@ const PartnersContainer = () => {
                                 companyUrl
                             } = partner;
                             return (
-                                <li key={id} className={styles['item']}>
-                                    <a className={styles['link']} href={companyUrl}  target="_blank">
+                                <li key={id} className={styles.item}>
+                                    <a className={styles.link} href={companyUrl} target="_blank" rel="noreferrer">
                                         <div
-                                            className={styles['image']}
+                                            className={styles.image}
                                             style={{backgroundImage: `url(${companyImage.url})`}}
                                         />
                                     </a>
                                 </li>
-                            )
+                            );
                         })
                     }
                 </ul>
-            ))
+            ));
         }
 
-        return itemList
-    }
+        return itemList;
+    };
 
     return <Partners
         getPartners={getPartners}
-    />
-}
+    />;
+};
 
 export default PartnersContainer;

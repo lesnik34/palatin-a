@@ -1,7 +1,7 @@
-import cln from 'classnames'
-import { Parallax } from 'react-scroll-parallax'
+import cln from 'classnames';
+import { Parallax } from 'react-scroll-parallax';
 
-import styles from './PreviewItem.module.scss'
+import styles from './PreviewItem.module.scss';
 
 const PreviewItem = (props) => {
     const {
@@ -10,11 +10,17 @@ const PreviewItem = (props) => {
         preview,
         rightClass,
         visionClass,
-        image
+        image,
+        forwardedRef,
+        inViewClass
     } = props;
 
     return (
-        <li className={cln(styles['item'], styles[rightClass])} key={preview.id}>
+        <li
+            className={cln(styles.item, styles[rightClass], styles[inViewClass])}
+            key={preview.id}
+            ref={forwardedRef}
+        >
             <div className={styles['item-wrap']}>
                 <h3
                     className={cln(
@@ -27,7 +33,7 @@ const PreviewItem = (props) => {
                     {preview.title}
                 </h3>
 
-                <Parallax className={styles['parallax']} y={[-9, 9]}>
+                <Parallax className={styles.parallax} y={[-9, 9]}>
                     <div className={cln(styles['item-image-wrap'], styles[rightClass])}>
                         <div
                             className={styles['item-image']}
@@ -56,6 +62,7 @@ const PreviewItem = (props) => {
                 </p>
 
                 <button
+                    type="button"
                     className={cln(
                         styles['item-close'],
                         styles[visionClass],
@@ -65,6 +72,7 @@ const PreviewItem = (props) => {
                 />
 
                 <button
+                    type="button"
                     className={cln(
                         styles['item-button'],
                         styles[rightClass],
@@ -76,7 +84,7 @@ const PreviewItem = (props) => {
                 </button>
             </div>
         </li>
-    )
-}
+    );
+};
 
 export default PreviewItem;

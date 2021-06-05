@@ -1,8 +1,8 @@
-import { useDispatch } from 'react-redux'
-import { useEffect } from 'react'
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 
-import getScalingFactor from '../../utils/getScalingFactor'
-import { setDesktop, setTablet, setMobile, setRetina } from '../../store/slices/settings'
+import getScalingFactor from '../../utils/getScalingFactor';
+import { setDesktop, setTablet, setMobile, setRetina } from '../../store/slices/settings';
 import { isRetina, isDesktopWidth, isTabletWidth } from '../../utils/scales';
 
 const Resize = () => {
@@ -13,7 +13,8 @@ const Resize = () => {
         window.addEventListener('resize', resizeHandler);
 
         return () => window.removeEventListener('resize', resizeHandler);
-    }, [])
+    // eslint-disable-next-line
+    }, []);
 
     const resizeHandler = () => {
         const root = document.documentElement;
@@ -33,9 +34,9 @@ const Resize = () => {
         }
 
         root.style.setProperty('--sf', getScalingFactor());
-    }
+    };
 
-    return null
-}
+    return null;
+};
 
 export default Resize;

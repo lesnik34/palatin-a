@@ -2,13 +2,12 @@ import {
     DEFAULT_SCREEN_WIDTH,
     DEFAULT_TABLET_WIDTH,
     DEFAULT_MOBILE_WIDTH,
-} from '../variables/variables'
+} from '../variables/variables';
 
-import { isDesktopWidth, isTabletWidth } from './scales'
+import { isDesktopWidth, isTabletWidth } from './scales';
 
 const getScalingFactor = () => {
     const screenWidth = window.innerWidth;
-    const screenHeight = window.innerHeight;
     let defaultWidth = '';
 
     if (isDesktopWidth()) {
@@ -22,7 +21,7 @@ const getScalingFactor = () => {
     const screenWidthDifferenceRatio = screenWidth / defaultWidth;
 
     const widthScalingFactor = (100 / screenWidth) * screenWidthDifferenceRatio;
-    return `${widthScalingFactor}vw`
+    return `${widthScalingFactor}vw`;
 };
 
 export default getScalingFactor;

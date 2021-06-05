@@ -1,7 +1,7 @@
-import AliceCarousel from 'react-alice-carousel'
-import cls from 'classnames'
+import AliceCarousel from 'react-alice-carousel';
+import cls from 'classnames';
 
-import styles from './Partners.module.scss'
+import styles from './Partners.module.scss';
 
 const Partners = (props) => {
     const {
@@ -9,18 +9,18 @@ const Partners = (props) => {
     } = props;
 
     return (
-        <div className={cls(styles['main'], 'partners')}>
-            <div className='container'>
-                <div className={styles['wrapper']}>
+        <div className={cls(styles.main, 'partners')}>
+            <div className="container">
+                <div className={styles.wrapper}>
                     <div className={styles['title-wrapper']}>
-                        <h2 className={styles['title']}>Наши партнеры</h2>
+                        <h2 className={styles.title}>Наши партнеры</h2>
                     </div>
 
-                    <div className={styles['slider']}>
+                    <div className={styles.slider}>
                         <AliceCarousel
-                            disableSlideInfo={true}
-                            infinite={true}
-                            mouseTracking={true}
+                            disableSlideInfo
+                            infinite
+                            mouseTracking
                             animationDuration={700}
                         >
                             { getPartners(3, styles) }
@@ -29,7 +29,7 @@ const Partners = (props) => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default Partners;

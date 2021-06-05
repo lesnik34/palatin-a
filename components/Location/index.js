@@ -1,3 +1,3 @@
-import LocationContainer from '../../containers/LocationContainer'
+import LocationContainer from '../../containers/LocationContainer';
 
 export default LocationContainer;

@@ -1,3 +1,3 @@
-import PreviewItemContainer from '../../containers/PreviewItemContainer'
+import PreviewItemContainer from '../../containers/PreviewItemContainer';
 
 export default PreviewItemContainer;

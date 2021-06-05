@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
     isBurgerMenuVisible: false,
@@ -7,7 +7,7 @@ const initialState = {
     isTablet: false,
     isMobile: true,
     isRetina: false
-}
+};
 const settingsSlice = createSlice({
     name: 'settings',
     initialState,
@@ -32,10 +32,10 @@ const settingsSlice = createSlice({
             state.isMobile = true;
         },
         setRetina: (state, action) => {
-            state.isRetina = action.payload
+            state.isRetina = action.payload;
         }
     }
-})
+});
 export const {
     toggleBurgerMenu,
     setDesktop,

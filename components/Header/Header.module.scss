@@ -1,19 +1,12 @@
 @import '../../styles/variables.scss';
 
-.main {
-    position: absolute;
-    z-index: 50;
-    top: 0;
-    left: 0;
-    right: 0;
-}
-
 .wrapper {
     padding-top: 12px;
     padding-bottom: 19px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
 }
 
 .full-logo {
@@ -35,11 +28,35 @@
     height: 20px;
     margin-right: 20px;
     margin-bottom: 2px;
+    position: relative;
+    z-index: 10;
 }
 
 .title {
     width: 137px;
     height: 30px;
+    position: relative;
+    z-index: 10;
+}
+
+.anim-enter {
+    &::before {
+        animation: anim-left ease-out 400ms forwards;
+    }
+
+    &::after {
+        animation: anim-right ease-out 400ms forwards;
+    }
+}
+
+.anim-exit {
+    &::before {
+        animation: anim-left ease-out 400ms alternate-reverse;
+    }
+
+    &::after {
+        animation: anim-right ease-out 400ms alternate-reverse;
+    }
 }
 
 .burger {
@@ -48,6 +65,18 @@
     outline: none;
     border: none;
     background-color: transparent;
+    z-index: 200;
+
+    &.active {
+        position: fixed;
+        right: 0;
+
+        & .burger-dot,
+        &::before,
+        &::after {
+            background-color: $basic-white;
+        }
+    }
 
     &::before {
         content: '';
@@ -58,6 +87,7 @@
         width: 6px;
         height: 6px;
         border-radius: 50%;
+        transition: background-color 500ms;
     }
 
     &::after {
@@ -69,6 +99,7 @@
         width: 6px;
         height: 6px;
         border-radius: 50%;
+        transition: background-color 500ms;
     }
 }
 
@@ -77,4 +108,63 @@
     width: 6px;
     height: 6px;
     border-radius: 50%;
+    transition: background-color 500ms;
+}
+
+@keyframes anim-right {
+    0% {
+        right: 5px;
+        width: 6px;
+    }
+
+    20% {
+        width: 9px;
+    }
+
+    38% {
+        right: 16px;
+        width: 6px;
+    }
+    62% {
+        right: 16px;
+        width: 6px;
+    }
+
+    80% {
+        width: 9px;
+    }
+
+    100% {
+        right: 5px;
+        width: 6px;
+    }
+}
+
+@keyframes anim-left {
+    0% {
+        left: 4px;
+        width: 6px;
+    }
+
+    20% {
+        width: 9px;
+    }
+
+    38% {
+        left: 16px;
+        width: 6px;
+    }
+    62% {
+        left: 16px;
+        width: 6px;
+    }
+
+    80% {
+        width: 9px;
+    }
+
+    100% {
+        left: 4px;
+        width: 6px;
+    }
 }

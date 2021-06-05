@@ -1,1 +1,85 @@
 @import '../../styles/variables.scss';
+
+.main {
+    background-color: $mine-shaft;
+    padding-top: 34px;
+    padding-bottom: 60px;
+    border-radius: 0 0 25px 25px;
+}
+
+.map-wrapper {
+    height: 274px;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    background-image: url('../../public/img/png/map-mobile.png');
+    background-color: $alto;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.map {
+    width: 100%;
+    height: 100%;
+}
+
+.title-wrapper {
+    border-bottom: 2px solid $basic-white;
+    padding-bottom: 14px;
+    margin-bottom: 30px;
+}
+
+.title {
+    font-family: $custom-font;
+    color: rgba($basic-white, 1);
+    font-size: 24px;
+    max-width: 250px;
+    margin: 0;
+}
+
+.text {
+    color: $basic-white;
+    font-family: $default-font;
+    font-size: 14px;
+    text-align: justify;
+    margin: 0;
+    margin-bottom: 60px;
+}
+
+.path {
+    margin-bottom: 40px;
+}
+
+.path-title {
+    display: none;
+    font-size: 17px;
+    font-weight: 400;
+    color: rgba($basic-white, .8);
+    margin: 0;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.item {
+    margin-bottom: 12px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.link {
+    background-color: $alabaster;
+    border-radius: 10px;
+    padding: 12px 25px;
+    width: 100%;
+    display: block;
+    text-align: center;
+    color: $basic-black;
+}

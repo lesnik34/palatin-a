@@ -7,6 +7,15 @@
     &:last-child {
         margin-bottom: 0;
     }
+
+    &.in-view .item-wrap {
+        animation: fade-in 500ms ease-in-out;
+    }
+
+    &.not-in-view .item-wrap {
+        animation: fade-out 300ms ease-in-out;
+        opacity: 0;
+    }
 }
 
 .item-wrap {
@@ -176,5 +185,34 @@
 
     &.description-visible {
         right: 10px;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        top: -40px;
+    }
+
+    70% {
+        top: 20px;
+        opacity: 1;
+    }
+
+    100% {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+        top: 0;
+    }
+
+    100% {
+        opacity: 0;
+        top: -40px;
     }
 }

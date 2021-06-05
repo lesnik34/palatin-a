@@ -1,25 +1,35 @@
 
-import Head from 'next/head'
-import { useRouter } from 'next/router'
+import Head from 'next/head';
+import handleViewport from 'react-in-viewport';
 
-import Header from '../Header'
+import Header from '../Header';
+import Footer from '../Footer';
+import Burger from '../Burger';
+import styles from './Layout.module.scss';
 
 const Layout = ({ children, title }) => {
-    const { asPath } = useRouter();
-
+    const ViewportBlock = handleViewport(Footer, { rootMargin: '-50px' });
     return (
         <>
-            <Head>
-                <title>{title}</title>
-            </Head>
+            <div className={styles.wrapper}>
+                <Head>
+                    <title>{title}</title>
+                </Head>
 
-            <Header />
+                <Header />
 
-            <main>
-                { children }
-            </main>
+                <Burger />
+
+                <main>
+                    { children }
+                </main>
+            </div>
+
+            <div className={styles.footer}>
+                <ViewportBlock />
+            </div>
         </>
-    )
-}
+    );
+};
 
 export default Layout;

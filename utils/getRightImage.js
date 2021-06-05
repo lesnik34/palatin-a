@@ -1,4 +1,4 @@
-export const getRightImage = (image, settings) => {
+const getRightImage = (image, settings) => {
     const {
         isDesktop,
         isTablet,
@@ -7,15 +7,17 @@ export const getRightImage = (image, settings) => {
 
     if (isDesktop && isRetina) {
         return image.desktopImageRetina ? image.desktopImageRetina.url : '';
-    } else if (isDesktop) {
+    } if (isDesktop) {
         return image.desktopImage ? image.desktopImage.url : '';
-    } else if (isTablet && isRetina) {
+    } if (isTablet && isRetina) {
         return image.tabletImageRetina ? image.tabletImageRetina.url : '';
-    } else if (isTablet) {
+    } if (isTablet) {
         return image.tabletImage ? image.tabletImage.url : '';
-    } else if (isRetina) {
+    } if (isRetina) {
         return image.mobileImageRetina ? image.mobileImageRetina.url : '';
-    } else {
-        return image.mobileImage ? image.mobileImage.url : '';
     }
-}
+    return image.mobileImage ? image.mobileImage.url : '';
+
+};
+
+export default getRightImage;

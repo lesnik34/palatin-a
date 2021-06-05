@@ -1,7 +1,7 @@
-import { Parallax } from 'react-scroll-parallax'
-import AliceCarousel from "react-alice-carousel";
+import { Parallax } from 'react-scroll-parallax';
+import AliceCarousel from 'react-alice-carousel';
 
-import styles from './Jumbotron.module.scss'
+import styles from './Jumbotron.module.scss';
 
 const Jumbotron = (props) => {
     const {
@@ -11,15 +11,15 @@ const Jumbotron = (props) => {
     } = props;
 
     return (
-        <div className={styles['jumbotron']}>
-            <Parallax className={styles['parallax']} y={[0, 20]}>
+        <div className={styles.jumbotron}>
+            <Parallax className={styles.parallax} y={[-22, 20]}>
                 <AliceCarousel
-                    disableButtonsControls={true}
-                    disableDotsControls={true}
-                    disableSlideInfo={true}
-                    infinite={true}
-                    mouseTracking={true}
-                    autoPlay={true}
+                    disableButtonsControls
+                    disableDotsControls
+                    disableSlideInfo
+                    infinite
+                    mouseTracking
+                    autoPlay
                     autoPlayInterval={6000}
                     animationDuration={900}
                 >
@@ -27,19 +27,19 @@ const Jumbotron = (props) => {
                 </AliceCarousel>
             </Parallax>
 
-            <div className={styles['main']}>
-                <div className='container'>
-                    <div className={styles['background']}>
-                        <div className={styles['wrapper']}>
-                            <h1 className={styles['title']}>{title}</h1>
+            <div className={styles.main}>
+                <div className="container">
+                    <div className={styles.background}>
+                        <div className={styles.wrapper}>
+                            <h1 className={styles.title}>{title}</h1>
 
-                            <p className={styles['description']}>{description}</p>
+                            <p className={styles.description}>{description}</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default Jumbotron;

@@ -1,4 +1,4 @@
-import styles from './Preview.module.scss'
+import styles from './Preview.module.scss';
 
 const Preview = (props) => {
     const {
@@ -6,18 +6,18 @@ const Preview = (props) => {
     } = props;
 
     return (
-        <div className={styles['main']}>
-            <div className='container'>
-                <div className={styles['wrapper']}>
+        <div className={styles.main}>
+            <div className="container">
+                <div className={styles.wrapper}>
                     <div className={styles['title-wrapper']}>
-                        <h2 className={styles['title']}>Предоставляемые услуги</h2>
+                        <h2 className={styles.title}>Предоставляемые услуги</h2>
                     </div>
 
-                    <ul className={styles['list']}>
+                    <ul className={styles.list}>
                         { getPreviews(styles) }
                     </ul>
 
-                    <div className={styles['other']}>
+                    <div className={styles.other}>
                         <h2 className={styles['other-title']}>Другие услуги</h2>
 
                         <p className={styles['other-description']}>
@@ -25,12 +25,12 @@ const Preview = (props) => {
                             лично в офисе, либо используя любой другой, удобный для вас способ связи
                         </p>
 
-                        <button className={styles['button']}>Контакты</button>
+                        <button type="button" className={styles.button}>Контакты</button>
                     </div>
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default Preview;

@@ -1,3 +1,3 @@
-import IntroContainer from '../../containers/IntroContainer'
+import IntroContainer from '../../containers/IntroContainer';
 
 export default IntroContainer;

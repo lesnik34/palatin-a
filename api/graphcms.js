@@ -1,11 +1,11 @@
 import { GraphQLClient } from 'graphql-request';
 
 const graphcms = new GraphQLClient(
-	'https://api-eu-central-1.graphcms.com/v2/ckobpba2bu4ww01z1caqtdcxp/master',
+    'https://api-eu-central-1.graphcms.com/v2/ckobpba2bu4ww01z1caqtdcxp/master',
 );
 
 export const getJumbotron = async () => {
-	const { jumbotrons } = await graphcms.request(
+    const { jumbotrons } = await graphcms.request(
 		`{
             jumbotrons(stage: PUBLISHED) {
                 title,
@@ -34,13 +34,13 @@ export const getJumbotron = async () => {
                 }
             }
         }`,
-	);
+    );
 
-	return jumbotrons[0];
+    return jumbotrons[0];
 };
 
 export const getAdvantages = async () => {
-	const { advantages } = await graphcms.request(
+    const { advantages } = await graphcms.request(
 		`{
             advantages (stage: PUBLISHED) {
                 id,
@@ -48,9 +48,9 @@ export const getAdvantages = async () => {
                 description
             }
         }`,
-	);
+    );
 
-	return advantages;
+    return advantages;
 };
 
 export const getPreview = async () => {
@@ -84,10 +84,10 @@ export const getPreview = async () => {
                 }
             }
         }`
-    )
+    );
 
     return previews;
-}
+};
 
 export const getPartners = async () => {
     const { partners } = await graphcms.request(
@@ -101,10 +101,10 @@ export const getPartners = async () => {
                 companyUrl
             }
         }`
-    )
+    );
 
     return partners;
-}
+};
 
 export const getPositions = async () => {
     const { positions } = await graphcms.request(
@@ -121,7 +121,31 @@ export const getPositions = async () => {
                 }
             }
         }`
-    )
+    );
 
     return positions;
+};
+
+export const getGlobal = async () => {
+    const { globals } = await graphcms.request(
+        `{
+            globals (stage: PUBLISHED) {
+                id,
+                company,
+                location {
+                    html
+                },
+                email,
+                phoneNumbers {
+                    html
+                },
+                logo {
+                    url
+                },
+                copyright
+            }
+        }`
+    );
+
+    return globals[globals.length - 1];
 }
