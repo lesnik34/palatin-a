@@ -6,17 +6,17 @@ const getRightImage = (image, settings) => {
     } = settings;
 
     if (isDesktop && isRetina) {
-        return image.desktopImageRetina ? image.desktopImageRetina.url : '';
+        return image.desktopImageRetina ? image.desktopImageRetina : {};
     } if (isDesktop) {
-        return image.desktopImage ? image.desktopImage.url : '';
+        return image.desktopImage ? image.desktopImage : {};
     } if (isTablet && isRetina) {
-        return image.tabletImageRetina ? image.tabletImageRetina.url : '';
+        return image.tabletImageRetina ? image.tabletImageRetina : {};
     } if (isTablet) {
-        return image.tabletImage ? image.tabletImage.url : '';
+        return image.tabletImage ? image.tabletImage : {};
     } if (isRetina) {
-        return image.mobileImageRetina ? image.mobileImageRetina.url : '';
+        return image.mobileImageRetina ? image.mobileImageRetina : {};
     }
-    return image.mobileImage ? image.mobileImage.url : '';
+    return image.mobileImage ? image.mobileImage : {};
 
 };
 

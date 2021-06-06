@@ -69,11 +69,11 @@ export const fetchRoutes = async (store) => {
     }
 };
 
-export const fetchServices = async (store) => {
+export const fetchServices = async (store, query) => {
     const {services} = store.getState().content;
-
-    if (services.length === 0) {
-        const fetchedServices = await getServices();
+    if (Object.keys(services).length === 0 || query.id !== services.slug) {
+        const fetchedServices = await getServices(query.id);
+        console.log(query.id);
         store.dispatch(setServices(fetchedServices));
     }
 };
