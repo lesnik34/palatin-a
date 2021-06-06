@@ -31,9 +31,9 @@
 
 .header {
     margin: 0;
-    color: rgba($basic-black, .5);
-    text-align: right;
-    margin-bottom: 15px;
+    color: rgba($basic-black, .7);
+    margin-bottom: 30px;
+    font-size: 24px;
 }
 
 .description {
@@ -41,10 +41,152 @@
 
     & p {
         margin: 0;
-        margin-bottom: 10px;
+        margin-bottom: 17px;
 
         &:last-child {
             margin-bottom: 0;
         }
+    }
+}
+
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modalImageWrap {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 20px;
+    justify-content: center;
+    width: 90%;
+    height: 90%;
+    position: relative;
+    z-index: 201;
+    overflow: hidden;
+}
+
+.anim-enter {
+    &.modal {
+        animation: background 400ms;
+        opacity: 1;
+    }
+
+    & .modalImage {
+        animation: fade-in 600ms ease-in-out;
+    }
+}
+
+.anim-enter-done {
+}
+
+.anim-exit-done {
+}
+
+.anim-exit {
+    &.modal {
+        animation: background 600ms alternate-reverse;
+    }
+
+    & .modalImage {
+        animation: fade-out 600ms ease-in-out;
+    }
+}
+
+.modalImage {
+    position: relative;
+}
+
+.overlay {
+    background-color: rgba($basic-black, .8);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.close {
+    border: none;
+    background-color: transparent;
+    width: 14px;
+    height: 12px;
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    transition: right 500ms;
+    padding: 10px 12px;
+    z-index: 201;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 3px;
+        top: 9px;
+        width: 18px;
+        height: 4px;
+        background-color: $alto;
+        transform: rotate(45deg);
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 3px;
+        top: 9px;
+        width: 18px;
+        height: 4px;
+        background-color: $alto;
+        transform: rotate(-45deg);
+    }
+}
+
+@keyframes background {
+
+    0% {
+        opacity: 0;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        top: 0;
+    }
+
+    70% {
+        top: 200vh;
+    }
+
+    100% {
+        top: 200vh;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        top: -100vh;
+    }
+
+    70% {
+        top: 0;
+    }
+
+    100% {
+        top: 0;
     }
 }
