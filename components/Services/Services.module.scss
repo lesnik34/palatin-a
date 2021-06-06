@@ -66,8 +66,8 @@
     align-items: flex-start;
     padding-top: 20px;
     justify-content: center;
-    width: 90%;
-    height: 90%;
+    max-width: 90%;
+    max-height: 90%;
     position: relative;
     z-index: 201;
     overflow: hidden;
