@@ -164,10 +164,10 @@ export const getRoutes = async () => {
     return services;
 };
 
-export const getServices = async () => {
-    const { services } = await graphcms.request(
+export const getServices = async (id) => {
+    const { service } = await graphcms.request(
         `{
-            services (stage: PUBLISHED) {
+            service (stage: PUBLISHED, where: { slug: "${id}" }) {
                 id,
                 title,
                 slug,
@@ -176,27 +176,39 @@ export const getServices = async () => {
                     id,
                     imageName,
                     mobileImage {
-                        url
+                        url,
+                        height,
+                        width
                     },
                     mobileImageRetina {
-                        url
+                        url,
+                        height,
+                        width
                     },
                     tabletImage {
-                        url
+                        url,
+                        height,
+                        width
                     },
                     tabletImageRetina {
-                        url
+                        url,
+                        height,
+                        width
                     },
                     desktopImage {
-                        url
+                        url,
+                        height,
+                        width
                     },
                     desktopImageRetina {
-                        url
+                        url,
+                        height,
+                        width
                     }
                 }
             }
         }`
     );
 
-    return services;
+    return service;
 };

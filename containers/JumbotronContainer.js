@@ -11,7 +11,7 @@ const JumbotronContainer = () => {
         <div key={image.id} className={styles['image-item']}>
             <img
                 className={styles.image}
-                src={getRightImage(image, settings)}
+                src={getRightImage(image, settings).url}
                 alt={image.imageName}
             />
         </div>

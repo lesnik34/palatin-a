@@ -42,7 +42,7 @@ const PreviewItemContainer = (props) => {
         openHandler={openHandler}
         closeHandler={closeHandler}
         visionClass={isDescriptionVisible ? 'description-visible' : 'promo-visible'}
-        image={getRightImage(preview.images[0], settings)}
+        image={getRightImage(preview.images[0], settings).url}
         forwardedRef={forwardedRef}
         inViewClass={inViewport ? 'in-view' : 'not-in-view'}
     />;

@@ -8,7 +8,7 @@ const initialState = {
     locations: [],
     global: {},
     routes: [],
-    services: []
+    services: {}
 };
 
 const contentsSlice = createSlice({
