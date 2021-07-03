@@ -3,12 +3,10 @@ import { useState } from 'react';
 import Image from 'next/image';
 
 import Services from '../components/Services/Services';
-import getRightImage from '../utils/getRightImage';
 import styles from '../components/Services/Services.module.scss';
 
 const ServicesContainer = () => {
     const { services } = useSelector(state => state.content);
-    const settings = useSelector(state => state.settings);
     const [ modal, setModal ] = useState(null);
     const [ vision, setVision ] = useState(false);
 
@@ -23,24 +21,23 @@ const ServicesContainer = () => {
         document.body.style.overflow = 'auto';
     };
 
-    const getItems = () => services.images.map(image => {
-        const currentImage = getRightImage(image, settings);
-
-        return (
-            <div key={image.id} className={styles.item}>
-                <div className={styles.imageWrap}>
+    const getItems = () => services.images.map(image => (
+        <div key={image.id} className={styles.item}>
+            <div className={styles.imageWrap}>
+                { image.url && (
                     <Image
                         className={styles.image}
-                        src={currentImage.url}
-                        alt={image.imageName}
-                        width={currentImage.width}
-                        height={currentImage.height}
-                        onClick={() => openHandler(currentImage)}
+                        src={image.url}
+                        quality="60"
+                        alt="Наши склады"
+                        draggable={false}
+                        layout="fill"
+                        onClick={() => openHandler(image)}
                     />
-                </div>
+                )}
             </div>
-        );
-    });
+        </div>
+    ));
 
     return <Services
         title={services.title}

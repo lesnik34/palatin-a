@@ -9,7 +9,7 @@ const LocationContainer = () => {
 
     const getLinks = (styles) => locations.map(location => (
         <li key={location.id} className={styles.item}>
-            <a href={location.navigator} className={styles.link}>
+            <a href={location.navigator} target="_blanc" className={styles.link}>
                 {location.title}
             </a>
         </li>

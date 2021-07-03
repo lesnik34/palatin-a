@@ -12,7 +12,7 @@ const Footer = (props) => {
 
     return (
         <div className={styles.footer} ref={forwardedRef}>
-            <div className="container">
+            <div className={styles.wrap}>
                 <address className={`${styles.wrapper} ${styles[inViewport]}`}>
                     <div
                         className={styles.location}
@@ -27,7 +27,7 @@ const Footer = (props) => {
 
                         <a
                             href={`mailto: ${email}`}
-                            className={styles.email}
+                            className={`${styles.email} usual-hover`}
                         >
                             {email}
                         </a>

@@ -11,12 +11,23 @@
     font-size: 24px;
     max-width: 250px;
     margin: 0;
+
+    @media (min-width: $tablet-width) {
+        font-size: 30px;
+        max-width: 100%;
+    }
 }
 
 .title-wrapper {
     border-bottom: 2px solid $basic-black;
     padding-bottom: 14px;
     margin-bottom: 74px;
+
+    @media (min-width: $tablet-width) {
+        display: inline-block;
+        padding-left: 3px;
+        padding-right: 3px;
+    }
 }
 
 .list {
@@ -27,6 +38,16 @@
 
 .other {
     margin-top: calc(80 * var(--sf));
+
+    @media (min-width: $tablet-width) {
+        margin-top: calc(270 * var(--sf));
+    }
+
+    @media (min-width: $desktop-width) {
+        width: 750px;
+        margin: 0 auto;
+        margin-top: 250px;
+    }
 }
 
 .other-title {
@@ -36,18 +57,28 @@
     color: rgba($basic-black, .8);
     text-transform: uppercase;
     margin-bottom: 15px;
+
+    @media (min-width: $tablet-width) {
+        text-align: center;
+    }
 }
 
 .other-description {
     font-family: $default-font;
     font-size: 15px;
     text-align: justify;
-    color: $dove-gray;
+    color: $basic-black;
     margin: 0;
     margin-bottom: 35px;
+
+    @media (min-width: $tablet-width) {
+        font-size: 18px;
+        padding: 0 25px;
+    }
 }
 
 .button {
+    display: inline-block;
     background-color: $basic-black;
     color: $basic-white;
     text-transform: uppercase;
@@ -55,5 +86,21 @@
     font-size: 18px;
     padding: 10px 45px;
     border: none;
-    margin-left: calc(50% - 87px);
+    margin-left: calc(50% - 88px);
+    text-align: center;
+    transition: opacity 500ms;
+
+    &:hover,
+    &:focus,
+    &:active {
+        opacity: .5;
+    }
+
+    @media (min-width: $tablet-width) {
+        background-color: transparent;
+        border: 1px solid $basic-black;
+        color: $basic-black;
+        padding: 10px 160px;
+        margin-left: calc(50% - 204px);
+    }
 }

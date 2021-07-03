@@ -6,6 +6,12 @@
         width: 10px !important;
         height: 10px !important;
         margin-right: 10px;
+        transition: opacity 200ms;
+
+        &:hover,
+        &:focus {
+            opacity: .6;
+        }
     }
 
     & .alice-carousel__dots-item.__active {
@@ -21,9 +27,19 @@
         background-image: url("../public/img/svg/arrow-left.svg");
         background-repeat: no-repeat;
         background-position: center center;
+        transition: opacity 200ms;
 
         & span {
             color: transparent;
+        }
+
+        &:hover,
+        &:focus {
+            opacity: .6;
+        }
+
+        @media (min-width: $tablet-width) {
+            left: 25vw;
         }
     }
 
@@ -35,9 +51,19 @@
         background-image: url("../public/img/svg/arrow-right.svg");
         background-repeat: no-repeat;
         background-position: center center;
+        transition: opacity 200ms;
 
         & span {
             color: transparent;
+        }
+
+        &:hover,
+        &:focus {
+            opacity: .6;
+        }
+
+        @media (min-width: $tablet-width) {
+            right: 25vw;
         }
     }
 }

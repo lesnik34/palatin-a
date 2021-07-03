@@ -28,6 +28,30 @@
         font-size: 134px;
         color: rgba($emperor, .38);
     }
+
+    @media (min-width: $tablet-width) {
+        margin-bottom: 0;
+        border: 1px solid $basic-black;
+        padding: 20px;
+        overflow: hidden;
+
+        &.hidden .wrapper {
+            left: 0;
+            top: -50vh;
+        }
+
+        &.active .wrapper {
+            left: 0;
+            top: 0;
+        }
+
+        &:before {
+            right: auto;
+            left: 14px;
+            top: -9px;
+            font-size: 86px;
+        }
+    }
 }
 
 .title {
@@ -35,6 +59,10 @@
     font-size: 19px;
     margin: 0;
     margin-bottom: 6px;
+
+    @media (min-width: $tablet-width) {
+        text-align: right;
+    }
 }
 
 .description {
@@ -42,9 +70,13 @@
     font-size: 20px;
     font-weight: 300;
     margin: 0;
+
+    @media (min-width: $tablet-width) {
+        text-align: right;
+    }
 }
 
 .wrapper {
     position: relative;
-    transition: left 800ms;
+    transition: left 800ms, top 500ms;
 }

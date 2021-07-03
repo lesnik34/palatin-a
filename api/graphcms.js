@@ -12,23 +12,10 @@ export const getJumbotron = async () => {
                 description,
                 images {
                     id,
-                    imageName,
-                    mobileImage {
+                    vertical {
                         url
                     },
-                    mobileImageRetina {
-                        url
-                    },
-                    tabletImage {
-                        url
-                    },
-                    tabletImageRetina {
-                        url
-                    },
-                    desktopImage {
-                        url
-                    },
-                    desktopImageRetina {
+                    horizontal {
                         url
                     }
                 }
@@ -60,27 +47,9 @@ export const getPreview = async () => {
                 id,
                 title,
                 description,
-                images {
+                image {
                     id,
-                    imageName,
-                    mobileImage {
-                        url
-                    },
-                    mobileImageRetina {
-                        url
-                    },
-                    tabletImage {
-                        url
-                    },
-                    tabletImageRetina {
-                        url
-                    },
-                    desktopImage {
-                        url
-                    },
-                    desktopImageRetina {
-                        url
-                    }
+                    url
                 }
             }
         }`
@@ -96,6 +65,7 @@ export const getPartners = async () => {
                 id,
                 company,
                 companyImage {
+                    id,
                     url
                 },
                 companyUrl
@@ -140,6 +110,7 @@ export const getGlobal = async () => {
                     html
                 },
                 logo {
+                    id,
                     url
                 },
                 copyright
@@ -174,37 +145,7 @@ export const getServices = async (id) => {
                 description { html },
                 images {
                     id,
-                    imageName,
-                    mobileImage {
-                        url,
-                        height,
-                        width
-                    },
-                    mobileImageRetina {
-                        url,
-                        height,
-                        width
-                    },
-                    tabletImage {
-                        url,
-                        height,
-                        width
-                    },
-                    tabletImageRetina {
-                        url,
-                        height,
-                        width
-                    },
-                    desktopImage {
-                        url,
-                        height,
-                        width
-                    },
-                    desktopImageRetina {
-                        url,
-                        height,
-                        width
-                    }
+                    url
                 }
             }
         }`

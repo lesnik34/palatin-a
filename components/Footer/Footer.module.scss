@@ -4,6 +4,15 @@
     padding-bottom: 20px;
     padding-top: 37px;
     background-color: $special-code-gray;
+    width: 100%;
+}
+
+.wrap {
+    padding: 0 20px;
+
+    @media (min-width: $tablet-width) {
+        padding: 0 40px;
+    }
 }
 
 .wrapper {
@@ -11,7 +20,6 @@
     display: grid;
     row-gap: 30px;
     grid-template-columns: 1fr 1fr;
-    opacity: 0;
 
     &.true {
         animation: fadeIn 300ms ease-in-out;
@@ -55,6 +63,10 @@
         font-size: 12px;
         font-style: normal;
         text-align: left;
+
+        @media (min-width: $tablet-width) {
+            font-size: 14px;
+        }
     }
 }
 
@@ -73,6 +85,13 @@
     & a {
         display: block;
         text-align: right;
+        transition: opacity 200ms;
+        outline: none;
+
+        &:hover,
+        &:focus {
+            opacity: .6;
+        }
     }
 
     & li {
@@ -99,6 +118,10 @@
     font-style: normal;
     grid-row-start: 3;
     grid-row-end: 4;
+
+    @media (min-width: $tablet-width) {
+        font-size: 12px;
+    }
 }
 
 @keyframes fadeIn {

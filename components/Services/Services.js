@@ -55,10 +55,9 @@ const Services = (props) => {
                             <div className={styles.modalImageWrap}>
                                 <Image
                                     className={styles.modalImage}
-                                    src={modal && modal.url}
-                                    width={modal && modal.width}
-                                    height={modal && modal.height}
-                                    alt={modal && modal.imageName}
+                                    src={modal?.url}
+                                    layout="fill"
+                                    alt="Наши склады"
                                 />
                             </div>
 

@@ -12,7 +12,7 @@ const Jumbotron = (props) => {
 
     return (
         <div className={styles.jumbotron}>
-            <Parallax className={styles.parallax} y={[0, 15]}>
+            <Parallax className={styles.parallax} y={[0, 12]}>
                 <AliceCarousel
                     disableButtonsControls
                     disableDotsControls
@@ -26,6 +26,8 @@ const Jumbotron = (props) => {
                     { renderImages(styles) }
                 </AliceCarousel>
             </Parallax>
+
+            <div className={styles.overlay} />
 
             <div className={styles.main}>
                 <div className="container">
