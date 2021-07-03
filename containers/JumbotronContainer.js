@@ -1,21 +1,28 @@
-import { useSelector } from 'react-redux';
+import { useCallback } from 'react';
+import { useSelector, shallowEqual } from 'react-redux';
+import Image from 'next/image';
 
-import Jumbotron from '../components/Jumbotron/Jumbotron';
 import getRightImage from '../utils/getRightImage';
+import Jumbotron from '../components/Jumbotron/Jumbotron';
 
 const JumbotronContainer = () => {
-    const { jumbotron } = useSelector(state => state.content);
-    const settings = useSelector(state => state.settings);
+    const { jumbotron } = useSelector(state => state.content, shallowEqual);
+    const settings = useSelector(state => state.settings, shallowEqual);
 
-    const renderImages = (styles) => jumbotron.images ? jumbotron.images.map(image => (
+    const renderImages = useCallback((styles) => jumbotron.images?.map(image => (
         <div key={image.id} className={styles['image-item']}>
-            <img
+            <Image
                 className={styles.image}
                 src={getRightImage(image, settings).url}
-                alt={image.imageName}
+                draggable={false}
+                alt="Promo images"
+                quality={60}
+                placeholder="blur"
+                layout="fill"
             />
         </div>
-    )): null;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    )), [settings.isMobile, settings.isTablet, settings.isDesktop]);
 
     return <Jumbotron
         renderImages={renderImages}

@@ -1,22 +1,12 @@
 const getRightImage = (image, settings) => {
     const {
-        isDesktop,
-        isTablet,
-        isRetina
+        isDesktop
     } = settings;
 
-    if (isDesktop && isRetina) {
-        return image.desktopImageRetina ? image.desktopImageRetina : {};
-    } if (isDesktop) {
-        return image.desktopImage ? image.desktopImage : {};
-    } if (isTablet && isRetina) {
-        return image.tabletImageRetina ? image.tabletImageRetina : {};
-    } if (isTablet) {
-        return image.tabletImage ? image.tabletImage : {};
-    } if (isRetina) {
-        return image.mobileImageRetina ? image.mobileImageRetina : {};
+    if (isDesktop) {
+        return image?.horizontal;
     }
-    return image.mobileImage ? image.mobileImage : {};
+    return image?.vertical;
 
 };
 

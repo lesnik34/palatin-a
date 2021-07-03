@@ -5,8 +5,17 @@ import Partners from '../components/Partners/Partners';
 
 const PartnersContainer = () => {
     const { partners } = useSelector(state => state.content);
+    const { isMobile } = useSelector(state => state.settings);
 
-    const getPartners = (count, styles) => {
+    const getCount = (number) => {
+        if (isMobile) {
+            return number;
+        }
+        return number * 2;
+    };
+
+    const getPartners = (number, styles) => {
+        const count = getCount(number);
         const itemList = [];
         const length = Math.floor(partners.length / count);
 
@@ -22,7 +31,13 @@ const PartnersContainer = () => {
                             } = partner;
                             return (
                                 <li key={id} className={styles.item}>
-                                    <a className={styles.link} href={companyUrl} target="_blank" rel="noreferrer">
+                                    <a
+                                        className={styles.link}
+                                        href={companyUrl}
+                                        draggable={false}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                    >
                                         <div
                                             className={styles.image}
                                             style={{backgroundImage: `url(${companyImage.url})`}}

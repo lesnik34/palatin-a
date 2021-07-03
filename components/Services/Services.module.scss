@@ -19,14 +19,24 @@
 
 .imageWrap {
     overflow: hidden;
-    width: 100%;
+    width: calc(100% - 40px);
     height: 300px;
-    padding-left: 20px;
-    padding-right: 20px;
+    position: relative;
+    margin: auto;
+
+    @media (min-width: $tablet-width) {
+        width: calc(100% - 80px);
+    }
+
+    @media (min-width: $desktop-width) {
+        width: 1050px;
+        height: 600px;
+    }
 }
 
 .image {
     width: 100%;
+    object-fit: cover;
 }
 
 .header {
@@ -34,6 +44,10 @@
     color: rgba($basic-black, .7);
     margin-bottom: 30px;
     font-size: 24px;
+
+    @media (min-width: $tablet-width) {
+        font-size: 30px;
+    }
 }
 
 .description {
@@ -42,9 +56,14 @@
     & p {
         margin: 0;
         margin-bottom: 17px;
+        font-size: 14px;
 
         &:last-child {
             margin-bottom: 0;
+        }
+
+        @media (min-width: $tablet-width) {
+            font-size: 18px;
         }
     }
 }
@@ -66,8 +85,8 @@
     align-items: flex-start;
     padding-top: 20px;
     justify-content: center;
-    max-width: 90%;
-    max-height: 90%;
+    width: 80%;
+    height: 70%;
     position: relative;
     z-index: 201;
     overflow: hidden;
@@ -84,12 +103,6 @@
     }
 }
 
-.anim-enter-done {
-}
-
-.anim-exit-done {
-}
-
 .anim-exit {
     &.modal {
         animation: background 600ms alternate-reverse;
@@ -102,6 +115,7 @@
 
 .modalImage {
     position: relative;
+    object-fit: contain;
 }
 
 .overlay {

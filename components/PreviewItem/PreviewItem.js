@@ -1,32 +1,30 @@
 import cln from 'classnames';
 import { Parallax } from 'react-scroll-parallax';
+import Image from 'next/image';
 
 import styles from './PreviewItem.module.scss';
 
 const PreviewItem = (props) => {
     const {
+        vision,
+        preview,
         openHandler,
         closeHandler,
-        preview,
-        rightClass,
-        visionClass,
-        image,
         forwardedRef,
-        inViewClass
     } = props;
 
     return (
         <li
-            className={cln(styles.item, styles[rightClass], styles[inViewClass])}
+            className={`${styles.item}`}
             key={preview.id}
             ref={forwardedRef}
         >
-            <div className={styles['item-wrap']}>
+            <div className={`${styles['item-wrap']} ${styles[vision.viewport]}`}>
                 <h3
                     className={cln(
                         styles['item-title'],
-                        styles[rightClass],
-                        styles[visionClass]
+                        styles[vision.type],
+                        styles[vision.status]
                     )}
                     onClick={openHandler}
                 >
@@ -34,17 +32,25 @@ const PreviewItem = (props) => {
                 </h3>
 
                 <Parallax className={styles.parallax} y={[-9, 9]}>
-                    <div className={cln(styles['item-image-wrap'], styles[rightClass])}>
+                    <div className={cln(styles['item-image-wrap'], styles[vision.type])}>
                         <div
                             className={styles['item-image']}
-                            style={{ backgroundImage: `url('${image}')` }}
-                        />
+                        >
+                            <Image
+                                src={preview.image?.url}
+                                className={styles.image}
+                                alt="Our services"
+                                quality={60}
+                                placeholder="blur"
+                                layout="fill"
+                            />
+                        </div>
 
                         <div
                             className={cln(
                                 styles['item-overlay'],
-                                styles[rightClass],
-                                styles[visionClass]
+                                styles[vision.type],
+                                styles[vision.status]
                             )}
                             onClick={closeHandler}
                         />
@@ -54,8 +60,8 @@ const PreviewItem = (props) => {
                 <p
                     className={cln(
                         styles['item-text'],
-                        styles[rightClass],
-                        styles[visionClass]
+                        styles[vision.type],
+                        styles[vision.status]
                     )}
                 >
                     {preview.description}
@@ -65,8 +71,8 @@ const PreviewItem = (props) => {
                     type="button"
                     className={cln(
                         styles['item-close'],
-                        styles[visionClass],
-                        styles[visionClass]
+                        styles[vision.type],
+                        styles[vision.status]
                     )}
                     onClick={closeHandler}
                 />
@@ -75,8 +81,8 @@ const PreviewItem = (props) => {
                     type="button"
                     className={cln(
                         styles['item-button'],
-                        styles[rightClass],
-                        styles[visionClass]
+                        styles[vision.type],
+                        styles[vision.status]
                     )}
                     onClick={openHandler}
                 >

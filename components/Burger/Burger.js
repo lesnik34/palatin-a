@@ -1,4 +1,5 @@
 import {CSSTransition} from 'react-transition-group';
+import Link from 'next/link';
 
 import styles from './Burger.module.scss';
 
@@ -6,7 +7,8 @@ const Burger = (props) => {
     const {
         vision,
         getRoutes,
-        global
+        global,
+        clickHandler
     } = props;
 
     return (
@@ -29,7 +31,23 @@ const Burger = (props) => {
                 <div className="container">
                     <div className={styles.wrapper}>
                         <ul className={styles.list}>
+                            <li className={styles.item}>
+                                <Link href="/">
+                                    <a className={styles.link} onClick={clickHandler}>
+                                        Главная
+                                    </a>
+                                </Link>
+                            </li>
+
                             { getRoutes() }
+
+                            <li className={styles.item}>
+                                <Link href="/contacts">
+                                    <a className={styles.link} onClick={clickHandler}>
+                                        Контакты
+                                    </a>
+                                </Link>
+                            </li>
                         </ul>
 
                         <div className={styles.container}>

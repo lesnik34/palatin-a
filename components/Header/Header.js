@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import {CSSTransition} from 'react-transition-group';
+import Navigation from '../Navigation';
 
 import styles from './Header.module.scss';
 
@@ -7,18 +8,20 @@ const Header = (props) => {
     const {
         toggleHandler,
         getBurgerClass,
-        burgerVision
+        burgerVision,
+        isMobile,
+        getLogoIcons,
     } = props;
 
     return (
         <div className={styles.main}>
             <div className="container">
                 <div className={styles.wrapper}>
-                    <div className={styles['full-logo']}>
+                    <div className={`${styles['full-logo']} ${styles[burgerVision]}`}>
                         <Link href="/">
                             <a className={styles.link}>
                                 <img
-                                    src="/img/svg/logo.svg"
+                                    src={getLogoIcons().logo}
                                     alt="Company logo"
                                     className={styles.logo}
                                 />
@@ -28,7 +31,7 @@ const Header = (props) => {
                         <Link href="/">
                             <a className={styles.link}>
                                 <img
-                                    src="/img/svg/logo-title.svg"
+                                    src={getLogoIcons().title}
                                     alt="Logo title"
                                     className={styles.title}
                                 />
@@ -36,24 +39,29 @@ const Header = (props) => {
                         </Link>
                     </div>
 
-                    <CSSTransition
-                        in={burgerVision}
-                        classNames={{
-                            enterActive: styles['anim-enter'],
-                            enterDone: styles['anim-enter-done'],
-                            exitActive: styles['anim-exit'],
-                            exitDone: styles['anim-exit-done']
-                        }}
-                        timeout={400}
-                    >
-                        <button
-                            type="button"
-                            className={`${styles.burger} ${getBurgerClass(styles)}`}
-                            onClick={toggleHandler}
-                        >
-                            <div className={styles['burger-dot']} />
-                        </button>
-                    </CSSTransition>
+                    { isMobile
+                        ? (
+                            <CSSTransition
+                                in={burgerVision}
+                                classNames={{
+                                    enterActive: styles['anim-enter'],
+                                    enterDone: styles['anim-enter-done'],
+                                    exitActive: styles['anim-exit'],
+                                    exitDone: styles['anim-exit-done']
+                                }}
+                                timeout={400}
+                            >
+                                <button
+                                    type="button"
+                                    className={`${styles.burger} ${getBurgerClass(styles)}`}
+                                    onClick={toggleHandler}
+                                >
+                                    <div className={styles['burger-dot']} />
+                                </button>
+                            </CSSTransition>
+                        )
+                        : <Navigation />
+                    }
                 </div>
             </div>
         </div>

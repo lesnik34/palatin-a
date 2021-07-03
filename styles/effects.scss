@@ -1,0 +1,21 @@
+.default-hover {
+    transition: box-shadow 250ms, opacity 200ms;
+    box-shadow: 0px 17px 9px -7px rgba($basic-black, .0);
+    outline: none;
+
+    &:hover,
+    &:focus {
+        opacity: .8;
+        box-shadow: 0px 6px 9px -7px rgba($basic-black, .6);
+    }
+}
+
+.usual-hover {
+    transition: opacity 200ms;
+    outline: none;
+
+    &:hover,
+    &:focus {
+        opacity: .6;
+    }
+}

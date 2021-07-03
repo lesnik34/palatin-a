@@ -1,8 +1,5 @@
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
-
 import PreviewItem from '../components/PreviewItem/PreviewItem';
-import getRightImage from '../utils/getRightImage';
 
 const PreviewItemContainer = (props) => {
     const {
@@ -14,8 +11,6 @@ const PreviewItemContainer = (props) => {
 
     const [ isDescriptionVisible, setDescriptionVision ] = useState(false);
 
-    const settings = useSelector(state => state.settings);
-
     const openHandler = () => {
         setDescriptionVision(true);
     };
@@ -26,25 +21,28 @@ const PreviewItemContainer = (props) => {
 
     const getRightClass = () => {
         if ((index + 1) % 3 === 0) {
-            return 'third-type';
+            return 'second-type';
         }
 
         if ((index + 1) % 2 === 0) {
-            return 'second-type';
+            return 'third-type';
         }
 
         return 'first-type';
     };
 
+    const getVision = () => ({
+        type: getRightClass(),
+        viewport: inViewport ? 'in-view' : 'not-in-view',
+        status: isDescriptionVisible ? 'description-visible' : 'promo-visible'
+    });
+
     return <PreviewItem
-        preview={preview}
-        rightClass={getRightClass()}
         openHandler={openHandler}
         closeHandler={closeHandler}
-        visionClass={isDescriptionVisible ? 'description-visible' : 'promo-visible'}
-        image={getRightImage(preview.images[0], settings).url}
         forwardedRef={forwardedRef}
-        inViewClass={inViewport ? 'in-view' : 'not-in-view'}
+        vision={getVision()}
+        preview={preview}
     />;
 };
 

@@ -5,6 +5,10 @@
     margin-bottom: 100px;
     overflow: hidden;
     padding-bottom: 25px;
+
+    @media (min-width: $desktop-width) {
+        margin-top: 380px;
+    }
 }
 
 .title {
@@ -13,6 +17,10 @@
     font-size: 20px;
     margin: 0;
     margin-bottom: 20px;
+
+    @media (min-width: $tablet-width) {
+        font-size: 30px;
+    }
 }
 
 .description {
@@ -21,7 +29,10 @@
     font-size: 14px;
     text-align: justify;
     margin: 0;
-    margin-bottom: 75px;
+
+    @media (min-width: $tablet-width) {
+        font-size: 18px;
+    }
 }
 
 .list {
@@ -29,4 +40,30 @@
     padding: 0;
     list-style: none;
     counter-reset: myCounter;
+
+    @media (min-width: $tablet-width) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+    }
+
+    @media (min-width: $desktop-width) {
+        flex-grow: 1;
+    }
+}
+
+.wrapper {
+    @media (min-width: $desktop-width) {
+        display: flex;
+    }
+}
+
+.content {
+    margin-bottom: 75px;
+
+    @media (min-width: $desktop-width) {
+        margin-bottom: 0;
+        margin-right: 56px;
+        max-width: 445px;
+    }
 }

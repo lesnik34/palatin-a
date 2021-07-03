@@ -37,6 +37,7 @@ const BurgerContainer = () => {
         vision={isBurgerMenuVisible}
         getRoutes={getRoutes}
         global={global}
+        clickHandler={clickHandler}
     />;
 };
 

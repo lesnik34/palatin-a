@@ -1,5 +1,10 @@
 @import '../../styles/variables.scss';
 
+.main {
+    position: relative;
+    z-index: 200;
+}
+
 .wrapper {
     padding-top: 12px;
     padding-bottom: 19px;
@@ -7,11 +12,20 @@
     align-items: center;
     justify-content: space-between;
     position: relative;
+
+    @media (min-width: $tablet-width) {
+        padding-top: 19px;
+    }
 }
 
 .full-logo {
     display: flex;
     align-items: center;
+    transition: opacity 700ms;
+
+    &.true {
+        opacity: 0;
+    }
 }
 
 .link {
@@ -29,14 +43,12 @@
     margin-right: 20px;
     margin-bottom: 2px;
     position: relative;
-    z-index: 10;
 }
 
 .title {
     width: 137px;
     height: 30px;
     position: relative;
-    z-index: 10;
 }
 
 .anim-enter {
@@ -75,7 +87,6 @@
     outline: none;
     border: none;
     background-color: transparent;
-    z-index: 200;
     overflow: hidden;
 
     &.anim-enter-done {

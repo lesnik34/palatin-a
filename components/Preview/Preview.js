@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import styles from './Preview.module.scss';
 
 const Preview = (props) => {
@@ -25,7 +27,9 @@ const Preview = (props) => {
                             лично в офисе, либо используя любой другой, удобный для вас способ связи
                         </p>
 
-                        <button type="button" className={styles.button}>Контакты</button>
+                        <Link href="/contacts">
+                            <a className={styles.button}>Контакты</a>
+                        </Link>
                     </div>
                 </div>
             </div>
