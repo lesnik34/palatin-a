@@ -1,0 +1,69 @@
+@import '../../styles/variables.scss';
+
+.main {
+    margin-top: 122px;
+    margin-bottom: 100px;
+    overflow: hidden;
+    padding-bottom: 25px;
+
+    @media (min-width: $desktop-width) {
+        margin-top: 380px;
+    }
+}
+
+.title {
+    font-family: $custom-font;
+    font-weight: 600;
+    font-size: 20px;
+    margin: 0;
+    margin-bottom: 20px;
+
+    @media (min-width: $tablet-width) {
+        font-size: 30px;
+    }
+}
+
+.description {
+    font-family: $default-font;
+    font-weight: 300;
+    font-size: 14px;
+    text-align: justify;
+    margin: 0;
+
+    @media (min-width: $tablet-width) {
+        font-size: 18px;
+    }
+}
+
+.list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: myCounter;
+
+    @media (min-width: $tablet-width) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+    }
+
+    @media (min-width: $desktop-width) {
+        flex-grow: 1;
+    }
+}
+
+.wrapper {
+    @media (min-width: $desktop-width) {
+        display: flex;
+    }
+}
+
+.content {
+    margin-bottom: 75px;
+
+    @media (min-width: $desktop-width) {
+        margin-bottom: 0;
+        margin-right: 56px;
+        max-width: 445px;
+    }
+}

@@ -2,14 +2,51 @@
   "name": "palatin-a",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "16.1.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.5.1",
+    "axios": "^0.21.1",
+    "classnames": "^2.2.6",
+    "framer-motion": "^4.1.16",
+    "google-map-react": "^2.1.9",
+    "graphql": "^15.5.0",
+    "graphql-request": "^3.4.0",
     "next": "10.2.0",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "next-redux-wrapper": "^6.0.2",
+    "react": "17.0.1",
+    "react-alice-carousel": "^2.5.1",
+    "react-dom": "17.0.1",
+    "react-in-viewport": "*",
+    "react-parallax": "^3.3.0",
+    "react-redux": "^7.2.4",
+    "react-scroll-parallax": "^2.4.0",
+    "react-transition-group": "^4.4.1",
+    "react-yandex-maps": "^4.6.0",
+    "redux": "^4.1.0",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^2.3.0",
+    "sass": "^1.32.12",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.27.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.23.3",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "^4.2.0"
   }
 }

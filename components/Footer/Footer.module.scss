@@ -1,0 +1,149 @@
+@import '../../styles/variables.scss';
+
+.footer {
+    padding-bottom: 20px;
+    padding-top: 37px;
+    background-color: $special-code-gray;
+    width: 100%;
+}
+
+.wrap {
+    padding: 0 20px;
+
+    @media (min-width: $tablet-width) {
+        padding: 0 40px;
+    }
+}
+
+.wrapper {
+    position: relative;
+    display: grid;
+    row-gap: 30px;
+    grid-template-columns: 1fr 1fr;
+
+    &.true {
+        animation: fadeIn 300ms ease-in-out;
+        opacity: 1;
+    }
+
+    &.false {
+        animation: fadeOut 300ms ease-in-out;
+        opacity: 0;
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    border-top: 2px solid $emperor;
+    border-bottom: 2px solid $emperor;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.logoWrapper {
+    border: 3px solid $alto;
+    padding: 7px 12px;
+    margin-right: 10px;
+}
+
+.logo {
+    width: 40px;
+    height: auto;
+}
+
+.location {
+    & p {
+        color: rgba($basic-white, .5);
+        margin: 0;
+        text-transform: uppercase;
+        max-width: 230px;
+        font-size: 12px;
+        font-style: normal;
+        text-align: left;
+
+        @media (min-width: $tablet-width) {
+            font-size: 14px;
+        }
+    }
+}
+
+.phone {
+    color: rgba($basic-white, .9);
+    font-size: 18px;
+    font-style: normal;
+
+    & ul,
+    & ol {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    & a {
+        display: block;
+        text-align: right;
+        transition: opacity 200ms;
+        outline: none;
+
+        &:hover,
+        &:focus {
+            opacity: .6;
+        }
+    }
+
+    & li {
+        margin-bottom: 10px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.email {
+    color: rgba($basic-white, .9);
+    font-size: 22px;
+    font-style: normal;
+    text-align: right;
+    letter-spacing: 2px;
+    margin-top: 10px;
+}
+
+.copyright {
+    color: rgba($basic-white, .5);
+    font-size: 10px;
+    font-style: normal;
+    grid-row-start: 3;
+    grid-row-end: 4;
+
+    @media (min-width: $tablet-width) {
+        font-size: 12px;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        top: -60px;
+        opacity: 0;
+    }
+
+    100% {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        top: 0px;
+        opacity: 1;
+    }
+
+    100% {
+        top: -60px;
+        opacity: 0;
+    }
+}

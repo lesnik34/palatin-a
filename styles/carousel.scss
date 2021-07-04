@@ -1,0 +1,69 @@
+.partners,
+.services {
+    & .alice-carousel__dots-item {
+        background-color: transparent !important;
+        border: 1px solid $alto;
+        width: 10px !important;
+        height: 10px !important;
+        margin-right: 10px;
+        transition: opacity 200ms;
+
+        &:hover,
+        &:focus {
+            opacity: .6;
+        }
+    }
+
+    & .alice-carousel__dots-item.__active {
+        border: 1px solid $code-gray;
+        background-color: transparent !important;
+    }
+
+    & .alice-carousel__prev-btn {
+        position: absolute;
+        bottom: -15px;
+        left: 40px;
+        width: auto;
+        background-image: url("../public/img/svg/arrow-left.svg");
+        background-repeat: no-repeat;
+        background-position: center center;
+        transition: opacity 200ms;
+
+        & span {
+            color: transparent;
+        }
+
+        &:hover,
+        &:focus {
+            opacity: .6;
+        }
+
+        @media (min-width: $tablet-width) {
+            left: 25vw;
+        }
+    }
+
+    & .alice-carousel__next-btn {
+        position: absolute;
+        bottom: -15px;
+        right: 40px;
+        width: auto;
+        background-image: url("../public/img/svg/arrow-right.svg");
+        background-repeat: no-repeat;
+        background-position: center center;
+        transition: opacity 200ms;
+
+        & span {
+            color: transparent;
+        }
+
+        &:hover,
+        &:focus {
+            opacity: .6;
+        }
+
+        @media (min-width: $tablet-width) {
+            right: 25vw;
+        }
+    }
+}
