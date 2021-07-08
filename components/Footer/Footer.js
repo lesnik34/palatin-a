@@ -13,7 +13,7 @@ const Footer = (props) => {
     return (
         <div className={styles.footer} ref={forwardedRef}>
             <div className={styles.wrap}>
-                <address className={`${styles.wrapper} ${styles[inViewport]}`}>
+                <address itemScope itemType="http://schema.org/Organization" className={`${styles.wrapper} ${styles[inViewport]}`}>
                     <div
                         className={styles.location}
                         dangerouslySetInnerHTML={{ __html: location }}
@@ -28,6 +28,7 @@ const Footer = (props) => {
                         <a
                             href={`mailto: ${email}`}
                             className={`${styles.email} usual-hover`}
+                            itemProp="email"
                         >
                             {email}
                         </a>
