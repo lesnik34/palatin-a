@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import cln from 'classnames';
 import { Parallax } from 'react-scroll-parallax';
 import Image from 'next/image';
@@ -93,4 +94,4 @@ const PreviewItem = (props) => {
     );
 };
 
-export default PreviewItem;
+export default memo(PreviewItem);

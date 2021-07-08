@@ -30,7 +30,7 @@ const NavigationContainer = () => {
     const Dropdown = () => routes.map(route => (
         <li className={styles.subItem} key={route.id}>
             <Link href={`/services/${route.slug}`}>
-                <a className={`${styles.subLink} usual-hover`}>
+                <a itemProp="url" className={`${styles.subLink} usual-hover`}>
                     {route.title}
                 </a>
             </Link>
