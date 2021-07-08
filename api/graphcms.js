@@ -113,7 +113,15 @@ export const getGlobal = async () => {
                     id,
                     url
                 },
-                copyright
+                copyright,
+                ogTitle,
+                ogDescription,
+                ogImage {
+                    url
+                },
+                metaTitle,
+                metaDescription,
+                metaKeywords,
             }
         }`
     );

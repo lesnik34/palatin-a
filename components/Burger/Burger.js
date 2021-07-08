@@ -30,10 +30,10 @@ const Burger = (props) => {
             <div className={styles.burger}>
                 <div className="container">
                     <div className={styles.wrapper}>
-                        <ul className={styles.list}>
+                        <ul itemScope itemType="http://schema.org/SiteNavigationElement" className={styles.list}>
                             <li className={styles.item}>
                                 <Link href="/">
-                                    <a className={styles.link} onClick={clickHandler}>
+                                    <a itemProp="url" className={styles.link} onClick={clickHandler}>
                                         Главная
                                     </a>
                                 </Link>
@@ -43,7 +43,7 @@ const Burger = (props) => {
 
                             <li className={styles.item}>
                                 <Link href="/contacts">
-                                    <a className={styles.link} onClick={clickHandler}>
+                                    <a itemProp="url" className={styles.link} onClick={clickHandler}>
                                         Контакты
                                     </a>
                                 </Link>
