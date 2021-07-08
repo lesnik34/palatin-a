@@ -26,7 +26,7 @@ const BurgerContainer = () => {
     const getRoutes = () => routes.map(route => (
         <li className={styles.item} key={route.id}>
             <Link href={`/services/${route.slug}`}>
-                <a className={styles.link} onClick={clickHandler}>
+                <a itemProp="url" className={styles.link} onClick={clickHandler}>
                     {route.title}
                 </a>
             </Link>

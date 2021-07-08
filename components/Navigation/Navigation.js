@@ -13,10 +13,10 @@ const Navigation = (props) => {
 
     return (
         <div className={styles.main}>
-            <ul className={styles.list}>
+            <ul itemScope itemType="http://schema.org/SiteNavigationElement" className={styles.list}>
                 <li className={styles.item}>
                     <Link href="/">
-                        <a className={`${styles.link} default-hover ${getRightColor()}`}>
+                        <a itemProp="url" className={`${styles.link} default-hover ${getRightColor()}`}>
                             Главная
                         </a>
                     </Link>
@@ -54,7 +54,7 @@ const Navigation = (props) => {
 
                 <li className={styles.item}>
                     <Link href="/contacts">
-                        <a className={`${styles.link} default-hover ${getRightColor()}`}>
+                        <a itemProp="url" className={`${styles.link} default-hover ${getRightColor()}`}>
                             Контакты
                         </a>
                     </Link>
