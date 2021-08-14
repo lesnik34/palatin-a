@@ -29,6 +29,7 @@ const ServicesContainer = () => {
                         className={styles.image}
                         src={image.url}
                         alt="Наши склады"
+                        title="Наши склады"
                         draggable={false}
                         layout="fill"
                         onClick={() => openHandler(image)}

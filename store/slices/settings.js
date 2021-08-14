@@ -15,6 +15,9 @@ const settingsSlice = createSlice({
         toggleBurgerMenu: state => {
             state.isBurgerMenuVisible = !state.isBurgerMenuVisible;
         },
+        closeBurgerMenu: state => {
+            state.isBurgerMenuVisible = false;
+        },
 
         setDesktop: state => {
             state.isDesktop = true;
@@ -38,6 +41,7 @@ const settingsSlice = createSlice({
 });
 export const {
     toggleBurgerMenu,
+    closeBurgerMenu,
     setDesktop,
     setTablet,
     setMobile,

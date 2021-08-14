@@ -58,6 +58,7 @@ const Services = (props) => {
                                     src={modal?.url}
                                     layout="fill"
                                     alt="Наши склады"
+                                    title="Наши склады"
                                 />
                             </div>
 

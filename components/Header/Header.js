@@ -22,7 +22,8 @@ const Header = (props) => {
                             <a className={styles.link}>
                                 <img
                                     src={getLogoIcons().logo}
-                                    alt="Company logo"
+                                    alt="Логотип компании"
+                                    title="Палатин"
                                     className={styles.logo}
                                 />
                             </a>
@@ -32,7 +33,8 @@ const Header = (props) => {
                             <a className={styles.link}>
                                 <img
                                     src={getLogoIcons().title}
-                                    alt="Logo title"
+                                    alt="Логотип компании"
+                                    title="Палатин"
                                     className={styles.title}
                                 />
                             </a>

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import PreviewItem from '../components/PreviewItem/PreviewItem';
 
 const PreviewItemContainer = (props) => {
@@ -10,9 +11,12 @@ const PreviewItemContainer = (props) => {
     } = props;
 
     const [ isDescriptionVisible, setDescriptionVision ] = useState(false);
+    const isMobile = useSelector(state => state.settings.isMobile);
 
     const openHandler = () => {
-        setDescriptionVision(true);
+        if (isMobile) {
+            setDescriptionVision(true);
+        };
     };
 
     const closeHandler = () => {
