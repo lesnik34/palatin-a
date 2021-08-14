@@ -11,7 +11,8 @@ const Services = (props) => {
         getItems,
         modal,
         vision,
-        closeHandler
+        closeHandler,
+        isNotEmpty
     } = props;
 
     return (
@@ -25,16 +26,18 @@ const Services = (props) => {
                         dangerouslySetInnerHTML={{__html: description}}
                     />
 
-                    <div className={`${styles.list} services`}>
-                        <AliceCarousel
-                            disableSlideInfo
-                            infinite
-                            mouseTracking
-                            animationDuration={700}
-                        >
-                            { getItems() }
-                        </AliceCarousel>
-                    </div>
+                    { isNotEmpty && (
+                        <div className={`${styles.list} services`}>
+                            <AliceCarousel
+                                disableSlideInfo
+                                infinite
+                                mouseTracking
+                                animationDuration={700}
+                            >
+                                { getItems() }
+                            </AliceCarousel>
+                        </div>
+                    )}
 
                     <CSSTransition
                         in={vision}
