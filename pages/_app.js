@@ -7,14 +7,16 @@ import wrapper from '../store/store';
 import Resize from '../components/Resize';
 
 class MyApp extends App {
-  static getInitialProps = async ({Component, ctx}) => ({
+  static getInitialProps = async ({ Component, ctx }) => ({
       pageProps: {
-          ...(Component.getInitialProps ? await Component.getInitialProps(ctx) : {}),
+          ...(Component.getInitialProps
+              ? await Component.getInitialProps(ctx)
+              : {}),
       },
   });
 
   render() {
-      const {Component, pageProps} = this.props;
+      const { Component, pageProps } = this.props;
 
       return (
           <ParallaxProvider>

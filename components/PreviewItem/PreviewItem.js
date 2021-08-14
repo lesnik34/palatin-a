@@ -40,7 +40,8 @@ const PreviewItem = (props) => {
                             <Image
                                 src={preview.image?.url}
                                 className={styles.image}
-                                alt="Our services"
+                                alt="Наши услуги"
+                                title="Наши услуги"
                                 placeholder="blur"
                                 layout="fill"
                             />
