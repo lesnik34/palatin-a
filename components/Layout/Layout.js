@@ -7,7 +7,7 @@ import Burger from '../Burger';
 import styles from './Layout.module.scss';
 
 const Layout = ({ children, title, currentUrl }) => {
-    const settings = useSelector(state => state.settings, shallowEqual);
+    const global = useSelector(state => state.content.global, shallowEqual);
 
     return (
         <>
@@ -16,14 +16,14 @@ const Layout = ({ children, title, currentUrl }) => {
                     <title itemProp="headline">{title}</title>
                     <link rel="canonical" href={currentUrl} />
 
-                    <meta name="title" content={settings.metaTitle} />
-                    <meta itemProp="description" name="description" content={settings.metaDescription} />
-                    <meta itemProp="keywords" name="keywords" content={settings.metaKeywords} />
+                    <meta name="title" content={global.metaTitle} />
+                    <meta itemProp="description" name="description" content={global.metaDescription} />
+                    <meta itemProp="keywords" name="keywords" content={global.metaKeywords} />
 
                     <meta property="og:type" content="website" key="ogtype" />
-                    <meta property="og:title" content={settings.ogTitle} key="ogtitle" />
-                    <meta property="og:description" content={settings.ogDescription} key="ogdesc" />
-                    <meta property="og:image" content={settings.ogImage?.url} key="ogimage" />
+                    <meta property="og:title" content={global.ogTitle} key="ogtitle" />
+                    <meta property="og:description" content={global.ogDescription} key="ogdesc" />
+                    <meta property="og:image" content={global.ogImage?.url} key="ogimage" />
                     <meta property="og:url" content={currentUrl} key="ogurl" />
                     <meta property="og:site_name" content="Palatin-a" key="ogsitename" />
 
@@ -41,9 +41,10 @@ const Layout = ({ children, title, currentUrl }) => {
                     <link rel="icon" type="image/png" sizes="96x96" href="fav/favicon-96x96.png" />
                     <link rel="icon" type="image/png" sizes="16x16" href="fav/favicon-16x16.png" />
                     <link rel="manifest" href="/manifest.json" />
-                    <meta name="msapplication-TileColor" content="#ffffff" />
+                    <meta name="msapplication-TileColor" content="#000000" />
+                    <meta name="robots" content="all" />
                     <meta name="msapplication-TileImage" content="fav/ms-icon-144x144.png" />
-                    <meta name="theme-color" content="#ffffff" />
+                    <meta name="theme-color" content="#000000" />
                 </Head>
 
                 <Header />
