@@ -16,7 +16,6 @@ const JumbotronContainer = () => {
                 src={getRightImage(image, settings).url}
                 draggable={false}
                 alt="Promo images"
-                quality={60}
                 placeholder="blur"
                 layout="fill"
             />

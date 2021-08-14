@@ -28,7 +28,6 @@ const ServicesContainer = () => {
                     <Image
                         className={styles.image}
                         src={image.url}
-                        quality="60"
                         alt="Наши склады"
                         draggable={false}
                         layout="fill"
