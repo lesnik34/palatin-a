@@ -41,7 +41,6 @@ const PreviewItem = (props) => {
                                 src={preview.image?.url}
                                 className={styles.image}
                                 alt="Our services"
-                                quality={60}
                                 placeholder="blur"
                                 layout="fill"
                             />
