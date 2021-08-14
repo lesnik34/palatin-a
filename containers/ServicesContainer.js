@@ -46,6 +46,7 @@ const ServicesContainer = () => {
         modal={modal}
         vision={vision}
         closeHandler={closeHandler}
+        isNotEmpty={services.images.length > 0}
     />;
 };
 
