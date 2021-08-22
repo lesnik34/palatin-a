@@ -61,7 +61,7 @@ export const getPreview = async () => {
 export const getPartners = async () => {
     const { partners } = await graphcms.request(
         `{
-            partners (stage: PUBLISHED) {
+            partners (stage: PUBLISHED, orderBy: rating_DESC) {
                 id,
                 company,
                 companyImage {
