@@ -32,9 +32,9 @@ const PartnersContainer = () => {
     const getPartners = (number, styles) => {
         const count = getCount(number);
         const itemList = [];
-        const length = Math.floor(partners.length / count);
+        const length = Math.round(partners.length / count);
 
-        for (let i = 0; i <= length; i++) {
+        for (let i = 0; i <= length - 1; i++) {
             itemList.push(
                 <ul key={key()} className={styles.list}>
                     {partners.slice(i * count, i * count + count).map((partner) => {
