@@ -103,6 +103,7 @@
     position: absolute;
     background-color: $background;
     padding: 10px 23px;
+    width: 200px;
     max-width: 214px;
     font-family: $special-font;
     font-size: 28px;
@@ -133,7 +134,7 @@
     }
 
     &.third-type {
-        left: calc(150 * var(--sf));
+        left: calc(141 * var(--sf));
         top: calc(80 * var(--sf));
 
         &.description-visible {
