@@ -22,8 +22,9 @@ const Footer = (props) => {
                     <div className={styles.container}>
                         <div
                             className={styles.phone}
-                            dangerouslySetInnerHTML={{ __html: phones }}
-                        />
+                        >
+                            {phones}
+                        </div>
 
                         <a
                             href={`mailto: ${email}`}

@@ -1,7 +1,6 @@
 import { memo } from 'react';
 import cln from 'classnames';
 import { Parallax } from 'react-scroll-parallax';
-import Image from 'next/image';
 
 import styles from './PreviewItem.module.scss';
 
@@ -37,13 +36,10 @@ const PreviewItem = (props) => {
                         <div
                             className={styles['item-image']}
                         >
-                            <Image
+                            <img
                                 src={preview.image?.url}
                                 className={styles.image}
                                 alt="Наши услуги"
-                                title="Наши услуги"
-                                placeholder="blur"
-                                layout="fill"
                             />
                         </div>
 

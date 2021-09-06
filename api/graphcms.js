@@ -122,6 +122,7 @@ export const getGlobal = async () => {
                 metaTitle,
                 metaDescription,
                 metaKeywords,
+                contactPhone,
             }
         }`
     );
