@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, shallowEqual } from 'react-redux';
 import PreviewItem from '../components/PreviewItem/PreviewItem';
+import imageLoader from '../utils/imageLoader';
 
 const PreviewItemContainer = (props) => {
     const {
@@ -12,6 +13,7 @@ const PreviewItemContainer = (props) => {
 
     const [ isDescriptionVisible, setDescriptionVision ] = useState(false);
     const isMobile = useSelector(state => state.settings.isMobile);
+    const settings = useSelector((state) => state.settings, shallowEqual);
 
     const openHandler = () => {
         if (isMobile) {
@@ -41,11 +43,14 @@ const PreviewItemContainer = (props) => {
         status: isDescriptionVisible ? 'description-visible' : 'promo-visible'
     });
 
+    const customLoader = (params) => imageLoader(params, settings);
+
     return <PreviewItem
         openHandler={openHandler}
         closeHandler={closeHandler}
         forwardedRef={forwardedRef}
         vision={getVision()}
+        customLoader={customLoader}
         preview={preview}
     />;
 };

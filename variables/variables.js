@@ -11,3 +11,9 @@ export const MIN_SCREEN_WIDTH = 1280;
 export const MIN_TABLET_WIDTH = 768;
 
 export const MAP_ZOOM = 11;
+
+export const IMAGES_SIZES = {
+    desktop: 1980,
+    tablet: 760,
+    mobile: 490,
+};

@@ -1,24 +1,15 @@
 import { memo } from 'react';
 import cln from 'classnames';
+import Image from 'next/image';
 import { Parallax } from 'react-scroll-parallax';
 
 import styles from './PreviewItem.module.scss';
 
 const PreviewItem = (props) => {
-    const {
-        vision,
-        preview,
-        openHandler,
-        closeHandler,
-        forwardedRef,
-    } = props;
+    const { vision, preview, openHandler, closeHandler, forwardedRef, customLoader } = props;
 
     return (
-        <li
-            className={`${styles.item}`}
-            key={preview.id}
-            ref={forwardedRef}
-        >
+        <li className={`${styles.item}`} key={preview.id} ref={forwardedRef}>
             <div className={`${styles['item-wrap']} ${styles[vision.viewport]}`}>
                 <h3
                     className={cln(
@@ -33,13 +24,15 @@ const PreviewItem = (props) => {
 
                 <Parallax className={styles.parallax} y={[-9, 9]}>
                     <div className={cln(styles['item-image-wrap'], styles[vision.type])}>
-                        <div
-                            className={styles['item-image']}
-                        >
-                            <img
+                        <div className={styles['item-image']}>
+                            <Image
                                 src={preview.image?.url}
                                 className={styles.image}
+                                loader={customLoader}
                                 alt="Наши услуги"
+                                title="Наши услуги"
+                                placeholder="blur"
+                                layout="fill"
                             />
                         </div>
 
@@ -83,7 +76,7 @@ const PreviewItem = (props) => {
                     )}
                     onClick={openHandler}
                 >
-                    Подробнее
+          Подробнее
                 </button>
             </div>
         </li>
