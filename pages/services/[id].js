@@ -9,7 +9,7 @@ const Home = () => {
     const { query } = useRouter();
 
     return (
-        <Layout title="Palatin-a: Главная" currentUrl={`https://palatin-azov.ru/services/${query.id}`}>
+        <Layout title="Palatin-a: Главная" currentUrl={`https://palatin-a.com/services/${query.id}`}>
             <section>
                 <Services />
             </section>

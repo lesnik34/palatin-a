@@ -18,7 +18,9 @@ const Contacts = (props) => {
                     </p>
 
                     <div className={styles.container}>
-                        <div className={styles.phones} dangerouslySetInnerHTML={{__html: phones}} />
+                        <div className={styles.phones}>
+                            {phones}
+                        </div>
 
                         <div className={styles.emailWrapper}>
                             <a className={`${styles.email} default-hover`} href={`mailto:${email}`}>

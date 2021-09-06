@@ -5,7 +5,7 @@ import Contacts from '../components/Contacts';
 import Layout from '../components/Layout';
 
 const Home = () => (
-    <Layout title="Palatin-a: Контакты" currentUrl="https://palatin-azov.ru/contacts">
+    <Layout title="Palatin-a: Контакты" currentUrl="https://palatin-a.com/contacts">
         <section>
             <Contacts />
         </section>

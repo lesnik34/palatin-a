@@ -10,7 +10,7 @@ import Partners from '../components/Partners';
 import Location from '../components/Location';
 
 const Home = () => (
-    <Layout title="Palatin-a: Главная" currentUrl="https://palatin-azov.ru/">
+    <Layout title="Palatin-a: Главная" currentUrl="https://palatin-a.com/">
         <section>
             <Jumbotron />
         </section>
