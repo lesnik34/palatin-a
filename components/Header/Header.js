@@ -26,11 +26,7 @@ const Header = (props) => {
                                     title="Палатин"
                                     className={styles.logo}
                                 />
-                            </a>
-                        </Link>
 
-                        <Link href="/">
-                            <a className={styles.link}>
                                 <img
                                     src={getLogoIcons().title}
                                     alt="Логотип компании"
