@@ -12,7 +12,8 @@ const Services = (props) => {
         modal,
         vision,
         closeHandler,
-        isNotEmpty
+        isNotEmpty,
+        customLoader
     } = props;
 
     return (
@@ -60,6 +61,7 @@ const Services = (props) => {
                                     className={styles.modalImage}
                                     src={modal?.url}
                                     layout="fill"
+                                    loader={customLoader}
                                     alt="Наши склады"
                                     title="Наши склады"
                                 />

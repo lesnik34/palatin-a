@@ -11,6 +11,35 @@
     margin: 0;
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
+    padding-bottom: 40px;
+
+    & :global(.alice-carousel__dots) {
+        margin: 0 30vw;
+        position: absolute;
+        top: 363px;
+        left: 0;
+        right: 0;
+    }
+
+    & :global(.alice-carousel__dots-item) {
+        margin: 0 10px !important;
+    }
+
+    & :global(.alice-carousel__wrapper) {
+        padding-bottom: 80px;
+    }
+
+    @media (min-width: $tablet-width) {
+        & :global(.alice-carousel__dots) {
+            top: 360px;
+        }
+    }
+
+    @media (min-width: $desktop-width) {
+        & :global(.alice-carousel__dots) {
+            top: 660px;
+        }
+    }
 }
 
 .item {
@@ -37,6 +66,7 @@
 .image {
     width: 100%;
     object-fit: cover;
+    background-color: $alto;
 }
 
 .header {
