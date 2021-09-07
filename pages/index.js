@@ -1,3 +1,4 @@
+import loadable from '@loadable/component';
 import {
     fetchAdvantages, fetchGlobal, fetchJumbotron,
     fetchLocations, fetchPartners, fetchPreview, fetchRoutes
@@ -7,7 +8,8 @@ import Intro from '../components/Intro';
 import Layout from '../components/Layout';
 import Preview from '../components/Preview';
 import Partners from '../components/Partners';
-import Location from '../components/Location';
+
+const Location = loadable(() => import('../components/Location'));
 
 const Home = () => (
     <Layout title="Palatin-a: Главная" currentUrl="https://palatin-a.com/">

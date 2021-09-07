@@ -30,6 +30,8 @@
 
 .link {
     outline: none;
+    display: flex;
+    align-items: center;
 
     &:hover,
     &:focus {
@@ -40,8 +42,7 @@
 .logo {
     width: 27px;
     height: 20px;
-    margin-right: 20px;
-    margin-bottom: 2px;
+    margin-right: 13px;
     position: relative;
 }
 

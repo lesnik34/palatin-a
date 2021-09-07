@@ -17,3 +17,7 @@ export const IMAGES_SIZES = {
     tablet: 760,
     mobile: 490,
 };
+
+export const TAG_MANAGER_ARGS = {
+    gtmId: process.env.NEXT_PUBLIC_GTM_ID
+}
