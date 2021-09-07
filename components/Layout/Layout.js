@@ -1,6 +1,7 @@
 import { useSelector, shallowEqual } from 'react-redux';
 import Head from 'next/head';
 
+import GoogleTagManager from '../GoogleTagManager';
 import Header from '../Header';
 import Footer from '../Footer';
 import Burger from '../Burger';
@@ -52,6 +53,7 @@ const Layout = ({ children, title, currentUrl }) => {
                 <Burger />
 
                 <main>
+                    <GoogleTagManager />
                     { children }
                 </main>
             </div>
