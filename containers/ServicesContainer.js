@@ -1,12 +1,14 @@
-import { useSelector } from 'react-redux';
+import { useSelector, shallowEqual } from 'react-redux';
 import { useState } from 'react';
 import Image from 'next/image';
 
 import Services from '../components/Services/Services';
 import styles from '../components/Services/Services.module.scss';
+import imageLoader from '../utils/imageLoader';
 
 const ServicesContainer = () => {
-    const { services } = useSelector(state => state.content);
+    const { services } = useSelector(state => state.content, shallowEqual);
+    const settings = useSelector((state) => state.settings, shallowEqual);
     const [ modal, setModal ] = useState(null);
     const [ vision, setVision ] = useState(false);
 
@@ -39,6 +41,8 @@ const ServicesContainer = () => {
         </div>
     ));
 
+    const customLoader = (params) => imageLoader(params, settings);
+
     return <Services
         title={services.title}
         description={services.description.html}
@@ -46,6 +50,7 @@ const ServicesContainer = () => {
         modal={modal}
         vision={vision}
         closeHandler={closeHandler}
+        customLoader={customLoader}
         isNotEmpty={services.images.length > 0}
     />;
 };
