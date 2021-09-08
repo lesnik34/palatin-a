@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://palatin-a.com
+
+# Sitemaps
+Sitemap: https://palatin-a.com/sitemap.xml
