@@ -1,6 +1,7 @@
 import { useCallback } from "react";
 import { useSelector, shallowEqual } from "react-redux";
 
+import imageLoader from "../utils/imageLoader";
 import getRightImage from "../utils/getRightImage";
 import Jumbotron from "../components/Jumbotron/Jumbotron";
 
@@ -14,7 +15,7 @@ const JumbotronContainer = () => {
         <div key={image.id} className={styles["image-item"]}>
           <img
             className={styles.image}
-            src={getRightImage(image, settings).url}
+            src={imageLoader(getRightImage(image, settings).url, settings)}
             draggable={false}
             alt="Промо изображения"
           />

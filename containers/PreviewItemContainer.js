@@ -6,13 +6,10 @@ const PreviewItemContainer = (props) => {
   const { preview, index, inViewport, forwardedRef } = props;
 
   const [isDescriptionVisible, setDescriptionVision] = useState(false);
-  const isMobile = useSelector(
-    (state) => state.settings.isMobile,
-    shallowEqual
-  );
+  const settings = useSelector((state) => state.settings, shallowEqual);
 
   const openHandler = () => {
-    if (isMobile) {
+    if (settings.isMobile) {
       setDescriptionVision(true);
     }
   };
@@ -46,6 +43,7 @@ const PreviewItemContainer = (props) => {
       forwardedRef={forwardedRef}
       vision={getVision()}
       preview={preview}
+      settings={settings}
     />
   );
 };

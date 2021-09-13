@@ -1,11 +1,13 @@
 import { useSelector, shallowEqual } from "react-redux";
 import { useState } from "react";
 
+import imageLoader from "../utils/imageLoader";
 import Services from "../components/Services/Services";
 import styles from "../components/Services/Services.module.scss";
 
 const ServicesContainer = () => {
   const { services } = useSelector((state) => state.content, shallowEqual);
+  const settings = useSelector((state) => state.settings, shallowEqual);
   const [modal, setModal] = useState(null);
   const [vision, setVision] = useState(false);
 
@@ -27,7 +29,7 @@ const ServicesContainer = () => {
           {image.url && (
             <img
               className={styles.image}
-              src={image.url}
+              src={imageLoader(image.url, settings)}
               alt="Наши склады"
               draggable={false}
               onClick={() => openHandler(image)}
@@ -45,7 +47,6 @@ const ServicesContainer = () => {
       modal={modal}
       vision={vision}
       closeHandler={closeHandler}
-      customLoader={customLoader}
       isNotEmpty={services.images.length > 0}
     />
   );
