@@ -1,11 +1,13 @@
 import { memo } from "react";
 import cln from "classnames";
+import imageLoader from "../../utils/imageLoader";
 import { Parallax } from "react-scroll-parallax";
 
 import styles from "./PreviewItem.module.scss";
 
 const PreviewItem = (props) => {
-  const { vision, preview, openHandler, closeHandler, forwardedRef } = props;
+  const { vision, preview, openHandler, closeHandler, forwardedRef, settings } =
+    props;
 
   return (
     <li className={`${styles.item}`} key={preview.id} ref={forwardedRef}>
@@ -25,7 +27,7 @@ const PreviewItem = (props) => {
           <div className={cln(styles["item-image-wrap"], styles[vision.type])}>
             <div className={styles["item-image"]}>
               <img
-                src={preview.image?.url}
+                src={imageLoader(preview.image?.url, settings)}
                 className={styles.image}
                 alt="Наши услуги"
               />
