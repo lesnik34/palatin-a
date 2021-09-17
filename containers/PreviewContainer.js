@@ -7,16 +7,17 @@ import PreviewItem from '../components/PreviewItem';
 
 const PreviewContainer = () => {
     const { previews } = useSelector(state => state.content);
-    const { isMobile, isTablet, isDesktop } = useSelector(state => state.settings);
+    const { isMobile, isTablet, isDesktop, locale } = useSelector(state => state.settings);
 
     const getPreviews = useCallback(() => previews.map((preview, index) => {
         const ViewPortBlock = handleViewport(PreviewItem, { rootMargin: '-80px' });
         return <ViewPortBlock key={preview.id} preview={preview} index={index} />;
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    }), [isMobile, isTablet, isDesktop]);
+    }), [isMobile, isTablet, isDesktop, locale]);
 
     return <Preview
         getPreviews={getPreviews}
+        locale={locale}
     />;
 };
 

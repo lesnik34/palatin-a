@@ -18,6 +18,11 @@ export const IMAGES_SIZES = {
     mobile: 490,
 };
 
+export const LOCALE = {
+    ru: 'ru',
+    en: 'en'
+};
+
 export const TAG_MANAGER_ARGS = {
     gtmId: process.env.NEXT_PUBLIC_GTM_ID
 }

@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
     isBurgerMenuVisible: false,
+    locale: 'ru',
 
     isDesktop: false,
     isTablet: false,
@@ -12,6 +13,9 @@ const settingsSlice = createSlice({
     name: 'settings',
     initialState,
     reducers: {
+        setLocale: (state, action) => {
+            state.locale = action.payload;
+        },
         toggleBurgerMenu: state => {
             state.isBurgerMenuVisible = !state.isBurgerMenuVisible;
         },
@@ -45,7 +49,8 @@ export const {
     setDesktop,
     setTablet,
     setMobile,
-    setRetina
+    setRetina,
+    setLocale
 } = settingsSlice.actions;
 
 export default settingsSlice;
