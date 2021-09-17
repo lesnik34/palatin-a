@@ -1,13 +1,13 @@
 import { GraphQLClient } from 'graphql-request';
 
 const graphcms = new GraphQLClient(
-    'https://api-eu-central-1.graphcms.com/v2/ckobpba2bu4ww01z1caqtdcxp/master',
+    'https://api-eu-central-1.graphcms.com/v2/ckobpba2bu4ww01z1caqtdcxp/master'
 );
 
 export const getJumbotron = async () => {
     const { jumbotrons } = await graphcms.request(
-		`{
-            jumbotrons(stage: PUBLISHED) {
+    `{
+            jumbotrons(stage: PUBLISHED, locales: [ru]) {
                 title,
                 description,
                 images {
@@ -18,9 +18,13 @@ export const getJumbotron = async () => {
                     horizontal {
                         url
                     }
+                },
+                localizations {
+                    title,
+                    description
                 }
             }
-        }`,
+        }`
     );
 
     return jumbotrons[0];
@@ -28,13 +32,17 @@ export const getJumbotron = async () => {
 
 export const getAdvantages = async () => {
     const { advantages } = await graphcms.request(
-		`{
-            advantages (stage: PUBLISHED) {
+    `{
+            advantages (stage: PUBLISHED, locales: [ru]) {
                 id,
                 title,
-                description
+                description,
+                localizations {
+                    title,
+                    description
+                }
             }
-        }`,
+        }`
     );
 
     return advantages;
@@ -42,14 +50,18 @@ export const getAdvantages = async () => {
 
 export const getPreview = async () => {
     const { previews } = await graphcms.request(
-        `{
-            previews (stage: PUBLISHED) {
+    `{
+            previews (stage: PUBLISHED, locales: [ru]) {
                 id,
                 title,
                 description,
                 image {
                     id,
                     url
+                },
+                localizations {
+                    title,
+                    description
                 }
             }
         }`
@@ -60,7 +72,7 @@ export const getPreview = async () => {
 
 export const getPartners = async () => {
     const { partners } = await graphcms.request(
-        `{
+    `{
             partners (stage: PUBLISHED, orderBy: rating_DESC) {
                 id,
                 company,
@@ -78,8 +90,8 @@ export const getPartners = async () => {
 
 export const getPositions = async () => {
     const { positions } = await graphcms.request(
-        `{
-            positions (stage: PUBLISHED) {
+    `{
+            positions (stage: PUBLISHED, locales: [ru]) {
                 id,
                 title,
                 navigator,
@@ -88,6 +100,10 @@ export const getPositions = async () => {
                 location {
                     latitude,
                     longitude
+                },
+                localizations {
+                    title,
+                    description
                 }
             }
         }`
@@ -98,7 +114,7 @@ export const getPositions = async () => {
 
 export const getGlobal = async () => {
     const { globals } = await graphcms.request(
-        `{
+    `{
             globals (stage: PUBLISHED) {
                 id,
                 company,
@@ -123,6 +139,11 @@ export const getGlobal = async () => {
                 metaDescription,
                 metaKeywords,
                 contactPhone,
+                localizations {
+                    location {
+                        html
+                    }
+                }
             }
         }`
     );
@@ -132,11 +153,14 @@ export const getGlobal = async () => {
 
 export const getRoutes = async () => {
     const { services } = await graphcms.request(
-        `{
-            services (stage: PUBLISHED) {
+    `{
+            services (stage: PUBLISHED, locales: [ru]) {
                 id,
                 title,
-                slug
+                slug,
+                localizations {
+                    title
+                }
             }
         }`
     );
@@ -146,8 +170,8 @@ export const getRoutes = async () => {
 
 export const getServices = async (id) => {
     const { service } = await graphcms.request(
-        `{
-            service (stage: PUBLISHED, where: { slug: "${id}" }) {
+    `{
+            service (stage: PUBLISHED, where: { slug: "${id}" }, locales: [ru]) {
                 id,
                 title,
                 slug,
@@ -155,6 +179,10 @@ export const getServices = async (id) => {
                 images {
                     id,
                     url
+                },
+                localizations {
+                    title,
+                    description { html },
                 }
             }
         }`

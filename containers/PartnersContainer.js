@@ -1,11 +1,11 @@
-import { useSelector } from 'react-redux';
+import { useSelector, shallowEqual } from 'react-redux';
 import { v4 as key } from 'uuid';
 
 import Partners from '../components/Partners/Partners';
 
 const PartnersContainer = () => {
-    const { partners } = useSelector((state) => state.content);
-    const { isMobile } = useSelector((state) => state.settings);
+    const { partners } = useSelector((state) => state.content, shallowEqual);
+    const { isMobile, locale } = useSelector((state) => state.settings, shallowEqual);
 
     const getCount = (number) => {
         if (isMobile) {
@@ -67,7 +67,7 @@ const PartnersContainer = () => {
         return itemList;
     };
 
-    return <Partners getPartners={getPartners} />;
+    return <Partners getPartners={getPartners} locale={locale} />;
 };
 
 export default PartnersContainer;

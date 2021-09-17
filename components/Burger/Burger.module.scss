@@ -22,6 +22,11 @@
             opacity: 0;
         }
 
+        & .locale {
+            animation: fade-in 500ms ease-in-out forwards 300ms;
+            opacity: 0;
+        }
+
         & .email {
             animation: fade-in 400ms ease-in-out forwards 400ms;
             opacity: 0;
@@ -42,6 +47,11 @@
             opacity: 0;
         }
 
+        & .locale {
+            animation: fade-out 150ms ease-in-out forwards;
+            opacity: 0;
+        }
+
         & .email {
             animation: fade-out 150ms ease-in-out forwards;
             opacity: 0;
@@ -55,7 +65,7 @@
 }
 
 .wrapper {
-    padding-top: 100px;
+    padding-top: 60px;
 }
 
 .list {
@@ -64,6 +74,27 @@
     list-style: none;
     overflow-y: scroll;
     max-height: 60vh;
+}
+
+.locale {
+    margin: 0;
+    color: $basic-white;
+    font-family: $custom-font;
+    font-weight: 600;
+    font-size: 24px;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    position: relative;
+
+    & span {
+        opacity: .7;
+    }
+}
+
+span.localeActive {
+    font-weight: 700;
+    opacity: 1;
 }
 
 .item {
@@ -98,6 +129,11 @@
     position: relative;
     color: rgba($alto, .7);
     font-size: 16px;
+}
+
+.buttonWrap {
+    overflow: hidden;
+    margin-bottom: 60px;
 }
 
 .logoWrap {

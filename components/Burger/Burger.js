@@ -1,6 +1,7 @@
 import {CSSTransition} from 'react-transition-group';
 import Link from 'next/link';
 
+import { LOCALE } from '../../variables/variables';
 import styles from './Burger.module.scss';
 
 const Burger = (props) => {
@@ -8,7 +9,9 @@ const Burger = (props) => {
         vision,
         getRoutes,
         global,
-        clickHandler
+        clickHandler,
+        locale,
+        localeHandler
     } = props;
 
     return (
@@ -30,11 +33,27 @@ const Burger = (props) => {
             <div className={styles.burger}>
                 <div className="container">
                     <div className={styles.wrapper}>
+                        <div className={styles.buttonWrap}>
+                            <button
+                                className={styles.locale}
+                                type="button"
+                                onClick={localeHandler}
+                            >
+                                <span className={LOCALE.ru === locale ? styles.localeActive : ''}>
+                            ru
+                                </span>
+                        /
+                                <span className={LOCALE.en === locale ? styles.localeActive : ''}>
+                            en
+                                </span>
+                            </button>
+                        </div>
+
                         <ul itemScope itemType="http://schema.org/SiteNavigationElement" className={styles.list}>
                             <li className={styles.item}>
                                 <Link href="/">
                                     <a itemProp="url" className={styles.link} onClick={clickHandler}>
-                                        Главная
+                                        {locale === LOCALE.ru ? 'Главная' : 'Home'}
                                     </a>
                                 </Link>
                             </li>
@@ -44,7 +63,7 @@ const Burger = (props) => {
                             <li className={styles.item}>
                                 <Link href="/contacts">
                                     <a itemProp="url" className={styles.link} onClick={clickHandler}>
-                                        Контакты
+                                        {locale === LOCALE.ru ? 'Контакты' : 'Contacts'}
                                     </a>
                                 </Link>
                             </li>

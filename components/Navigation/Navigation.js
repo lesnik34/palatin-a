@@ -1,23 +1,26 @@
 import Link from 'next/link';
 import { CSSTransition } from 'react-transition-group';
 
+import { LOCALE } from '../../variables/variables';
 import styles from './Navigation.module.scss';
 
 const Navigation = (props) => {
-    const {
-        isDropdownVisible,
-        dropdownHandler,
-        Dropdown,
-        getRightColor,
-    } = props;
+    const { isDropdownVisible, dropdownHandler, Dropdown, getRightColor, locale, localeHandler } = props;
 
     return (
         <div className={styles.main}>
-            <ul itemScope itemType="http://schema.org/SiteNavigationElement" className={styles.list}>
+            <ul
+                itemScope
+                itemType="http://schema.org/SiteNavigationElement"
+                className={styles.list}
+            >
                 <li className={styles.item}>
                     <Link href="/">
-                        <a itemProp="url" className={`${styles.link} default-hover ${getRightColor()}`}>
-                            Главная
+                        <a
+                            itemProp="url"
+                            className={`${styles.link} default-hover ${getRightColor()}`}
+                        >
+                            { locale === LOCALE.ru ? 'Главная' : 'Home' }
                         </a>
                     </Link>
                 </li>
@@ -28,7 +31,7 @@ const Navigation = (props) => {
                         className={`${styles.button} default-hover ${getRightColor()}`}
                         onClick={dropdownHandler}
                     >
-                        Наши услуги
+                        { locale === LOCALE.ru ? 'Наши услуги' : 'Our services' }
                     </button>
 
                     <CSSTransition
@@ -37,11 +40,11 @@ const Navigation = (props) => {
                             enterActive: styles['anim-enter'],
                             enterDone: styles['anim-enter-done'],
                             exitActive: styles['anim-exit'],
-                            exitDone: styles['anim-exit-done']
+                            exitDone: styles['anim-exit-done'],
                         }}
                         timeout={{
                             enter: 800,
-                            exit: 500
+                            exit: 500,
                         }}
                         mountOnEnter
                         unmountOnExit
@@ -54,10 +57,31 @@ const Navigation = (props) => {
 
                 <li className={styles.item}>
                     <Link href="/contacts">
-                        <a itemProp="url" className={`${styles.link} default-hover ${getRightColor()}`}>
-                            Контакты
+                        <a
+                            itemProp="url"
+                            className={`${styles.link} default-hover ${getRightColor()}`}
+                        >
+                            { locale === LOCALE.ru ? 'Контакты' : 'Contacts' }
                         </a>
                     </Link>
+                </li>
+
+                <li className={styles.item}>
+                    <button
+                        className={`${styles.button} default-hover ${getRightColor()} ${
+                            styles.locale
+                        }`}
+                        type="button"
+                        onClick={localeHandler}
+                    >
+                        <span className={LOCALE.ru === locale ? styles.localeActive : ''}>
+                            ru
+                        </span>
+                        /
+                        <span className={LOCALE.en === locale ? styles.localeActive : ''}>
+                            en
+                        </span>
+                    </button>
                 </li>
             </ul>
         </div>

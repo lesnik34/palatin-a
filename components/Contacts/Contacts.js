@@ -1,20 +1,21 @@
+import { LOCALE } from '../../variables/variables';
 import styles from './Contacts.module.scss';
 
 const Contacts = (props) => {
     const {
         email,
-        phones
+        phones,
+        locale
     } = props;
 
     return (
         <div className={styles.main}>
             <div className="container">
                 <div className={styles.wrapper}>
-                    <h1 className={styles.header}>Контакты</h1>
+                    <h1 className={styles.header}>{locale === LOCALE.ru ? 'Контакты' : 'Contacts'}</h1>
 
                     <p className={styles.description}>
-                        Время работы офиса ежедневно с 9:00 до 17:00,
-                        кроме выходных дней (Суббота и Воскресенье)
+                        {locale === LOCALE.ru ? 'Время работы офиса ежедневно с 9:00 до 17:00, кроме выходных дней (Суббота и Воскресенье)' : 'Office opening hours daily from 9:00 to 17:00, except weekends (Saturday and Sunday)'}
                     </p>
 
                     <div className={styles.container}>
