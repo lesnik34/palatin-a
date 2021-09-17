@@ -1,9 +1,10 @@
-import { useSelector } from 'react-redux';
+import { shallowEqual, useSelector } from 'react-redux';
 
 import Contacts from '../components/Contacts/Contacts';
 
 const ContactsContainer = () => {
-    const { global } = useSelector(state => state.content);
+    const { global } = useSelector(state => state.content, shallowEqual);
+    const locale = useSelector(state => state.settings.locale);
 
     const formatPhone = (phone) => `+${phone[0]} (${phone.slice(1, 4)}) ${phone.slice(4, 7)}-${phone.slice(7, 9)}-${phone.slice(9)}`;
 
@@ -22,6 +23,7 @@ const ContactsContainer = () => {
     return <Contacts
         email={global.email}
         phones={getPhones()}
+        locale={locale}
     />;
 };
 

@@ -1,11 +1,13 @@
 import AliceCarousel from 'react-alice-carousel';
 import cls from 'classnames';
 
+import { LOCALE } from '../../variables/variables';
 import styles from './Partners.module.scss';
 
 const Partners = (props) => {
     const {
-        getPartners
+        getPartners,
+        locale
     } = props;
 
     return (
@@ -13,7 +15,7 @@ const Partners = (props) => {
             <div className="container">
                 <div className={styles.wrapper}>
                     <div className={styles['title-wrapper']}>
-                        <h2 className={styles.title}>Наши партнеры</h2>
+                        <h2 className={styles.title}>{ locale === LOCALE.ru ? 'Наши партнеры' : 'Our partners'}</h2>
                     </div>
 
                     <div className={styles.slider}>
