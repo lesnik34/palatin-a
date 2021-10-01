@@ -60,6 +60,7 @@ const LocationContainer = () => {
 
     return (
         <Location
+            locale={locale}
             getLinks={getLinks}
             getMapPlaces={getMapPlaces}
             mapOptions={getMapOptions()}
