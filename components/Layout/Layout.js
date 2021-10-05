@@ -40,6 +40,7 @@ const Layout = ({ children, title, currentUrl }) => {
                         name="keywords"
                         content={global.metaKeywords}
                     />
+                    <meta name="yandex-verification" content="28fc710cf8607501" />
 
                     <meta property="og:type" content="website" key="ogtype" />
                     <meta property="og:title" content={global.ogTitle} key="ogtitle" />
