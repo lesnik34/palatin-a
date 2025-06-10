@@ -24,6 +24,7 @@ const FooterContainer = (props) => {
 
     return <Footer
         location={LOCALE.ru === locale ? global.location?.html : global.localizations[0].location?.html}
+        locale={locale}
         email={global.email}
         copyright={global.copyright}
         phones={getPhones()}

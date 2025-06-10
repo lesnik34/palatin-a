@@ -11,11 +11,13 @@ const LocationContainer = () => {
     const getLinks = (styles) =>
         locations.map((location) => (
             <li key={location.id} className={styles.item}>
-                <a href={location.navigator} target="_blanc" className={styles.link}>
-                    {locale === LOCALE.ru
-                        ? location.title
-                        : location.localizations[0].title}
-                </a>
+                <div className={styles.linkWrapper}>
+                    <a href={location.navigator} target="_blanc" className={styles.link}>
+                        {locale === LOCALE.ru
+                            ? location.title
+                            : location.localizations[0].title}
+                    </a>
+                </div>
             </li>
         ));
 

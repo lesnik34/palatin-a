@@ -1,14 +1,20 @@
+import { useMemo } from 'react';
+
+import { LOCALE } from '../../variables/variables';
 import styles from './Footer.module.scss';
 
 const Footer = (props) => {
     const {
         location,
+        locale,
         email,
         copyright,
         phones,
         inViewport,
         forwardedRef
     } = props;
+
+    const currentYear = useMemo(() => new Date().getFullYear(), []);
 
     return (
         <div className={styles.footer} ref={forwardedRef}>
@@ -20,6 +26,16 @@ const Footer = (props) => {
                     />
 
                     <div className={styles.container}>
+                        <a
+                            href="https://t.me/PalatinAzov"
+                            className={`${styles.telegram} usual-hover`}
+                            itemProp="telegram"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            {locale === LOCALE.ru ? 'Telegram-канал' : 'Telegram channel'}
+                        </a>
+
                         <div
                             className={styles.phone}
                         >
@@ -35,7 +51,7 @@ const Footer = (props) => {
                         </a>
                     </div>
 
-                    <small className={styles.copyright}>{copyright}</small>
+                    <small className={styles.copyright}>©{currentYear} {copyright}</small>
                 </address>
             </div>
         </div>

@@ -28,6 +28,18 @@ const Contacts = (props) => {
                                 {email}
                             </a>
                         </div>
+
+                        <div className={styles.telegramWrapper}>
+                            <a
+                                href="https://t.me/PalatinAzov"
+                                className={`${styles.telegram} default-hover`}
+                                itemProp="telegram"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                {locale === LOCALE.ru ? 'Telegram-канал' : 'Telegram channel'}
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
