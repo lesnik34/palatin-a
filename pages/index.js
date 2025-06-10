@@ -8,6 +8,7 @@ import Intro from '../components/Intro';
 import Layout from '../components/Layout';
 import Preview from '../components/Preview';
 import Partners from '../components/Partners';
+import SocialMedia from '../components/SocialMedia';
 
 const Location = loadable(() => import('../components/Location'));
 
@@ -23,6 +24,10 @@ const Home = () => (
 
         <section>
             <Preview />
+        </section>
+
+        <section>
+            <SocialMedia />
         </section>
 
         <section>

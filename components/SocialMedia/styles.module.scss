@@ -1,0 +1,106 @@
+@import '../../styles/variables.scss';
+
+.main {
+    overflow: hidden;
+    margin-bottom: 100px;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    border-radius: 10px;
+    background-color: $mine-shaft;
+    padding: 20px 30px;
+    width: 100%;
+}
+
+.title {
+    margin: 0;
+    font-family: $special-font;
+    font-size: 28px;
+    color: $basic-white;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.description {
+    font-family: $default-font;
+    font-size: 15px;
+    text-align: justify;
+    color: $basic-white;
+    margin: 0;
+    margin-bottom: 35px;
+    text-align: center;
+
+    @media (min-width: $tablet-width) {
+        font-size: 18px;
+        padding: 0 25px;
+    }
+}
+
+.buttonWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.telegram,
+.instagram {
+    width: 100%;
+    max-width: 408px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba($alabaster, .95);
+    color: $basic-white;
+    text-transform: uppercase;
+    font-family: $special-font;
+    font-size: 18px;
+    padding: 10px 45px;
+    border: none;
+    text-align: center;
+    transition: opacity 500ms;
+    border-radius: 5px;
+    color: $basic-black;
+
+    &:hover,
+    &:focus,
+    &:active {
+        opacity: .5;
+    }
+}
+
+.telegram {
+    margin-bottom: 15px;
+}
+
+.telegramIcon {
+    width: 30px;
+    height: 30px;
+    margin-right: 8px;
+    background-image: url('../../public/img/svg/telegram.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.instagramIcon {
+    width: 30px;
+    height: 30px;
+    margin-right: 8px;
+    background-image: url('../../public/img/svg/instagram.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+}
