@@ -1,7 +1,6 @@
 import { memo } from 'react';
 import cln from 'classnames';
 import { Parallax } from 'react-scroll-parallax';
-import imageLoader from '../../utils/imageLoader';
 import { LOCALE } from '../../variables/variables';
 
 import styles from './PreviewItem.module.scss';
@@ -30,7 +29,7 @@ const PreviewItem = (props) => {
                     <div className={cln(styles['item-image-wrap'], styles[vision.type])}>
                         <div className={styles['item-image']}>
                             <img
-                                src={imageLoader(preview.image?.url, settings)}
+                                src={preview.image?.url}
                                 className={styles.image}
                                 alt={settings.locale === LOCALE.ru
                                     ? 'Наши услуги'

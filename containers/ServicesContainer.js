@@ -2,7 +2,6 @@ import { useSelector, shallowEqual } from 'react-redux';
 import { useState } from 'react';
 
 import { LOCALE } from '../variables/variables';
-import imageLoader from '../utils/imageLoader';
 import Services from '../components/Services/Services';
 import styles from '../components/Services/Services.module.scss';
 
@@ -30,7 +29,7 @@ const ServicesContainer = () => {
                     {image.url && (
                         <img
                             className={styles.image}
-                            src={imageLoader(image.url, settings)}
+                            src={image.url}
                             alt="Наши склады"
                             draggable={false}
                             onClick={() => openHandler(image)}
