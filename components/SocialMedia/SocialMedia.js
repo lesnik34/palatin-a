@@ -34,19 +34,6 @@ const Preview = (props) => {
                                     Telegram
                                 </div>
                             </a>
-
-                            <a
-                                href="https://www.instagram.com/palatin_azov?igsh=MXZhM3JtcXV5cnJuaQ=="
-                                target="_blank"
-                                rel="noreferrer"
-                                className={styles.instagram}
-                            >
-                                <div className={styles.icon}>
-                                    <div className={styles.instagramIcon} />
-
-                                    Instagram
-                                </div>
-                            </a>
                         </div>
                     </div>
                 </div>
