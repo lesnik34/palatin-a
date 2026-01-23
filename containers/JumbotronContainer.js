@@ -20,8 +20,6 @@ const JumbotronContainer = () => {
         }
     };
 
-    console.log(jumbotron);
-
     const renderImages = useCallback(
         (styles) =>
             jumbotron.images?.map((image) => (
