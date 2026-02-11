@@ -23,6 +23,18 @@ const Preview = (props) => {
 
                         <div className={styles.buttonWrapper}>
                             <a
+                                href="https://max.ru/join/pxu4D4YC8IfA8RAr-dpmPbWhpDY9wZ8QkBnP9yfACSA"
+                                target="_blank"
+                                rel="noreferrer"
+                                className={styles.telegram}
+                            >
+                                <div className={styles.icon}>
+                                    <div className={styles.maxIcon} />
+                                    Max
+                                </div>
+                            </a>
+
+                            <a
                                 href="https://t.me/PalatinAzov"
                                 target="_blank"
                                 rel="noreferrer"
@@ -30,7 +42,6 @@ const Preview = (props) => {
                             >
                                 <div className={styles.icon}>
                                     <div className={styles.telegramIcon} />
-
                                     Telegram
                                 </div>
                             </a>

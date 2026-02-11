@@ -29,6 +29,18 @@ const Contacts = (props) => {
                             </a>
                         </div>
 
+                        <div className={styles.maxWrapper}>
+                            <a
+                                href="https://max.ru/join/pxu4D4YC8IfA8RAr-dpmPbWhpDY9wZ8QkBnP9yfACSA"
+                                className={`${styles.max} default-hover`}
+                                itemProp="max"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                {locale === LOCALE.ru ? 'Max-канал' : 'Max channel'}
+                            </a>
+                        </div>
+
                         <div className={styles.telegramWrapper}>
                             <a
                                 href="https://t.me/PalatinAzov"

@@ -27,6 +27,16 @@ const Footer = (props) => {
 
                     <div className={styles.container}>
                         <a
+                            href="https://max.ru/join/pxu4D4YC8IfA8RAr-dpmPbWhpDY9wZ8QkBnP9yfACSA"
+                            className={`${styles.telegram} usual-hover`}
+                            itemProp="max"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            {locale === LOCALE.ru ? 'Max-канал' : 'Max channel'}
+                        </a>
+
+                        <a
                             href="https://t.me/PalatinAzov"
                             className={`${styles.telegram} usual-hover`}
                             itemProp="telegram"
